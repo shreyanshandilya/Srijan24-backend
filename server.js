@@ -30,9 +30,9 @@ async function main() {
 //ROUTES
 app.use("/api", PurchaseRoute);
 
-// app.get('/',(req,res)=>{
-//   res.render('test');
-// })
+app.get('/',(req,res)=>{
+  res.send('test');
+})
 const PORT = process.env.PORT || 2000;
 
 app.listen(PORT, () => {
