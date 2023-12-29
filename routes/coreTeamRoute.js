@@ -1,15 +1,9 @@
 const express = require("express");
-const bodyParser = require("body-parser");
+const router = express.Router();
 
-const {getCoreTeam} = require('../controllers/coreTeam');
-const { get } = require("mongoose");
+const coreTeamControllers = require('../controllers/coreTeamControllers');
 
-const getTeamRoute = express();
+router.get("/coreteam", coreTeamControllers.getCoreTeam);
 
-getTeamRoute.use(express.json());
-getTeamRoute.use(bodyParser.urlencoded({ extended: true }));
-
-getTeamRoute.get("/coreteam", getCoreTeam);
-
-module.exports = getTeamRoute;
+module.exports = router;
 
