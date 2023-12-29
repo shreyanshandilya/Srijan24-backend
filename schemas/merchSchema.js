@@ -1,11 +1,6 @@
 const mongoose = require("mongoose");
 const purchaseTshirtSchema = mongoose.Schema(
   {
-    orderID: {
-      type: String,
-      required: true,
-      unique: true,
-    },
     name: {
       type: String,
       required: true,
@@ -18,15 +13,7 @@ const purchaseTshirtSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    branch: {
-      type: String,
-      required: true,
-    },
     tshirtSize: {
-      type: String,
-      required: true,
-    },
-    transactionID: {
       type: String,
       required: true,
     },
@@ -41,9 +28,6 @@ const purchaseTshirtSchema = mongoose.Schema(
     imageURL: {
       type: String,
       required: true,
-    },
-    email: {
-      type: String,
     },
   },
   { timestamps: true }

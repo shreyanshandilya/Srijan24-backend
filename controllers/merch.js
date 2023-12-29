@@ -4,37 +4,30 @@ exports.postTshirt = async (req, res) => {
     try {
 
         const {
-            orderID,
             name,
             admissionNumber,
             mobileNumber,
-            branch,
-            tshirtSize,
-            transactionID,
-            hostel,
-            roomNumber,
-            email,
-        } = req.body;
-
-        const resp = await Purchase.findOne({ orderID });
-        if (resp) {
-            console.log("repeated transaction id");
-            return res.status(400).send({ msg: "Transaction already recorded !" });
-        }
-
-        const { path: imageURL } = req.file;
-        const newPurchase = new Purchase({
-            orderID,
-            name,
-            admissionNumber,
-            mobileNumber,
-            branch,
-            transactionID,
             tshirtSize,
             hostel,
             roomNumber,
             imageURL,
-            email,
+        } = req.body;
+
+        // const resp = await Purchase.findOne({ orderID });
+        // if (resp) {
+        //     console.log("repeated transaction id");
+        //     return res.status(400).send({ msg: "Transaction already recorded !" });
+        // }
+
+        //const { path: imageURL } = req.file;
+        const newPurchase = new Purchase({
+            name,
+            admissionNumber,
+            mobileNumber,
+            tshirtSize,
+            hostel,
+            roomNumber,
+            imageURL,
         });
         const data = await newPurchase.save();
         //console.log(data);
