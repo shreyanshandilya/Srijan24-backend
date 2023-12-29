@@ -10,7 +10,7 @@ const postTshirt = async (req, res, next) => {
       tshirtSize,
       hostel,
       roomNumber,
-      imageURL,
+    //   imageURL,
     } = req.body;
 
     // const resp = await Purchase.findOne({ orderID });
@@ -19,7 +19,7 @@ const postTshirt = async (req, res, next) => {
     //     return res.status(400).send({ msg: "Transaction already recorded !" });
     // }
 
-    //const { path: imageURL } = req.file;
+    const { path: imageURL } = req.file;
     const newPurchase = new Purchase({
       name,
       admissionNumber,
