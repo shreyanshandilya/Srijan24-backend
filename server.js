@@ -9,6 +9,7 @@ require("dotenv").config();
 
 //ROUTES IMPORT
 const PurchaseRoute = require("./routes/merchRoute");
+const getTeamRoute = require("./routes/coreTeamRoute");
 
 const app = express();
 const path =require('path');
@@ -29,6 +30,7 @@ async function main() {
 
 //ROUTES
 app.use("/api", PurchaseRoute);
+app.use("/api", getTeamRoute)
 
 app.get('/',(req,res)=>{
   res.send('test');
