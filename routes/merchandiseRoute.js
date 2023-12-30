@@ -9,7 +9,7 @@ const merchandiseControllers  = require("../controllers/merchandiseControllers")
 router.post("/purchase", upload.single("image"), merchandiseControllers.postTshirt);
 router.get('/allOrders' ,merchandiseControllers.getAllOrders);
 router.put('/changeApproved/:purchaseId' , merchandiseControllers.changeParticularApproval);
-router.post('/getOrder/:purchaseId',merchandiseControllers.getParticularPurchaseId);
+router.post('/getOrder/:phoneNumber',merchandiseControllers.getParticularPhoneNumber);
 
 module.exports = router;
    

@@ -48,15 +48,11 @@ const getAllOrders = async (req, res, next) => {
 
 const changeParticularApproval = async (req, res, next) => {
   const purchaseId = req.params.purchaseId;
-  let purchaseItem;
   try {
-    purchaseItem = await Purchase.findById(purchaseId);
-    
-    purchaseItem ={ ...purchaseItem , approved:true};
+    const purchaseItem = await Purchase.findByIdAndUpdate(purchaseId,{approved:true});
 
-    await purchaseItem.save();
-
-    if (purchaseItem) {
+    if (!purchaseItem) {
+      console.log("not found");
       return next(new HttpError("error occured try again  later", 404));
     }
     res.status(200).json({ msg: "approval done", purchaseItem });
@@ -65,14 +61,14 @@ const changeParticularApproval = async (req, res, next) => {
   }
 };
 
-const getParticularPurchaseId = async (req, res, next) => {
-  let purchaseId = req.params.purchaseId;
-
+const getParticularPhoneNumber = async (req, res, next) => {
+  let phoneNumber = req.params.phoneNumber;
+  // console.log(phoneNumber);
   let purchaseItem;
   try {
-    purchaseItem = await Purchase.findById(purchaseId);
-    if (purchaseItem) {
-      return next(new HttpError("error occures try again later ", 404));
+    purchaseItem = await Purchase.find({mobileNumber:phoneNumber});
+    if (!purchaseItem) {
+      return next(new HttpError("error occured try again later ", 404));
     }
     res.status(200).json(purchaseItem);
   } catch (error) {
@@ -83,4 +79,4 @@ const getParticularPurchaseId = async (req, res, next) => {
 exports.postTshirt = postTshirt;
 exports.getAllOrders = getAllOrders;
 exports.changeParticularApproval = changeParticularApproval;
-exports.getParticularPurchaseId = getParticularPurchaseId;
+exports.getParticularPhoneNumber = getParticularPhoneNumber;
