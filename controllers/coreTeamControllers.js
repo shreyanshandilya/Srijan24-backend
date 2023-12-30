@@ -1,4 +1,4 @@
-const CoreTeam = require('../schemas/coreTeamSchema');
+const CoreTeam = require('../schemas/coreteamSchema');
 const HttpError =require('../utils/HttpError');
 
 const getCoreTeam = async (req, res ,next) => {
