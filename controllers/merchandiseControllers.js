@@ -59,7 +59,7 @@ const changeParticularApproval = async (req, res, next) => {
     if (purchaseItem) {
       return next(new HttpError("error occured try again  later", 404));
     }
-    res.status(200).json({ msg: "done", purchaseItem });
+    res.status(200).json({ msg: "approval done", purchaseItem });
   } catch (error) {
     return next(new HttpError("error occured try agin ", 404));
   }

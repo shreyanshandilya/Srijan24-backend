@@ -31,7 +31,7 @@ const purchaseTshirtSchema = mongoose.Schema(
     },
     approved:{
       type:Boolean,
-      required :true
+      default: false
     }
   },
   { timestamps: true }
