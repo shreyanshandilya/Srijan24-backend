@@ -12,27 +12,31 @@ const PurchaseRoute = require("./routes/merchRoute");
 const getTeamRoute = require("./routes/coreTeamRoute");
 
 const app = express();
-const path =require('path');
+const path = require('path');
 // const router = express.Router()
 
 app.use(bodyParser.json());
 app.use(cors());
 
 //DATABASE CONNECTION
-const DB_URL = process.env.DB_URL || "mongodb://127.0.0.1:27017/srijan2024";
+const DB_URL = process.env.DB_URL;
 
-main().catch(err => console.log("error connecting to database"));
 async function main() {
-  await mongoose.connect(DB_URL);
-  console.log("connected to database");
+  try {
+    await mongoose.connect(DB_URL).then(() => { console.log("connected to database"); })
 
+  } catch (err) {
+    console.log(err);
+    console.log("error connecting to database")
+  };
 }
+main()
 
 //ROUTES
 app.use("/api", PurchaseRoute);
 app.use("/api", getTeamRoute)
 
-app.get('/',(req,res)=>{
+app.get('/', (req, res) => {
   res.send('test');
 })
 const PORT = process.env.PORT || 2000;
