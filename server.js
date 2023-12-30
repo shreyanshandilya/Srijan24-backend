@@ -3,12 +3,12 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 // import chalk from "chalk";
 const cors = require("cors");
-const ExpressError = require("./utils/expressError");
+const HttpError = require("./utils/HttpError");
 require("dotenv").config();
 
 
 //ROUTES IMPORT
-const PurchaseRoute = require("./routes/merchRoute");
+const PurchaseRoute = require("./routes/merchandiseRoute");
 const getTeamRoute = require("./routes/coreTeamRoute");
 
 const app = express();
@@ -40,6 +40,13 @@ app.get('/', (req, res) => {
   res.send('test');
 })
 const PORT = process.env.PORT || 2000;
+
+app.use((req, res, next) => next (new HttpError('Could not find this route.', 404)));
+
+app.use((error, req, res, next) => {1
+    res.status(error.code || 500);
+    res.json({ message: error.message || 'An unknown error occurred!' });
+});
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
