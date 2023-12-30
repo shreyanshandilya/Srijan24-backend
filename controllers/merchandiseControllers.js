@@ -10,15 +10,7 @@ const postTshirt = async (req, res, next) => {
       tshirtSize,
       hostel,
       roomNumber,
-    //   imageURL,
     } = req.body;
-
-    // const resp = await Purchase.findOne({ orderID });
-    // if (resp) {
-    //     console.log("repeated transaction id");
-    //     return res.status(400).send({ msg: "Transaction already recorded !" });
-    // }
-
     const { path: imageURL } = req.file;
     const newPurchase = new Purchase({
       name,
@@ -28,11 +20,11 @@ const postTshirt = async (req, res, next) => {
       hostel,
       roomNumber,
       imageURL,
+      approved: false,
     });
     const data = await newPurchase.save();
-    //console.log(data);
 
-    return res.status(200).send({
+    return res.status(200).json({
       msg: "Your order has been confirmed successfully! ",
     });
   } catch (e) {
@@ -58,36 +50,37 @@ const changeParticularApproval = async (req, res, next) => {
   const purchaseId = req.params.purchaseId;
   let purchaseItem;
   try {
-    purchaseItem = await Purchase.findById(purchaseId) ;
-    //change approve here 
-    if(purchaseItem){
-        return next(new HttpError("error occured try again  later" ,404))
+    purchaseItem = await Purchase.findById(purchaseId);
+    
+    purchaseItem ={ ...purchaseItem , approved:true};
+
+    await purchaseItem.save();
+
+    if (purchaseItem) {
+      return next(new HttpError("error occured try again  later", 404));
     }
-    res.status(200).json({msg : "done" , purchaseItem})
+    res.status(200).json({ msg: "done", purchaseItem });
   } catch (error) {
     return next(new HttpError("error occured try agin ", 404));
   }
 };
 
-const getParticularPurchaseId =async (req,res,next)=>{
-   
-    let purchaseId=req.params.purchaseId;
-      
-    let purchaseItem;
-    try{
-        purchaseItem= await Purchase.findById(purchaseId);
-        if(purchaseItem){
-            return next(new HttpError("error occures try again later " ,404))
-        }
-        res.status(200).json(purchaseItem);
+const getParticularPurchaseId = async (req, res, next) => {
+  let purchaseId = req.params.purchaseId;
 
-    }catch(error){
-        return next(new HttpError("Error occured try again later" ,404))
+  let purchaseItem;
+  try {
+    purchaseItem = await Purchase.findById(purchaseId);
+    if (purchaseItem) {
+      return next(new HttpError("error occures try again later ", 404));
     }
-}
+    res.status(200).json(purchaseItem);
+  } catch (error) {
+    return next(new HttpError("Error occured try again later", 404));
+  }
+};
 
 exports.postTshirt = postTshirt;
 exports.getAllOrders = getAllOrders;
-exports.changeParticularApproval=changeParticularApproval;
-exports.getParticularPurchaseId=getParticularPurchaseId;
-
+exports.changeParticularApproval = changeParticularApproval;
+exports.getParticularPurchaseId = getParticularPurchaseId;
