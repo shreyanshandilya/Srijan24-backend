@@ -10,6 +10,7 @@ const postTshirt = async (req, res, next) => {
       tshirtSize,
       hostel,
       roomNumber,
+      quantity
     } = req.body;
     const { path: imageURL } = req.file;
     const newPurchase = new Purchase({
@@ -21,6 +22,7 @@ const postTshirt = async (req, res, next) => {
       roomNumber,
       imageURL,
       approved: false,
+      quantity
     });
     const data = await newPurchase.save();
 

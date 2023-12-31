@@ -32,6 +32,10 @@ const purchaseTshirtSchema = mongoose.Schema(
     approved:{
       type:Boolean,
       default: false
+    },
+    quantity:{
+      type:Number,
+      required: true
     }
   },
   { timestamps: true }
