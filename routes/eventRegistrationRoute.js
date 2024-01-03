@@ -1,13 +1,9 @@
 const express = require("express");
-const bodyParser = require("body-parser");
+const  router = express.Router();
 
-const { getEventRegistration} = require("../controllers/eventRegistrationControllers");
+const getEventRegistrationControllers = require("../controllers/eventRegistrationControllers");
 
-const eventRegistrationRoute = express();
 
-eventRegistrationRoute.use(express.json());
-eventRegistrationRoute.use(bodyParser.urlencoded({ extended: true }));
+router.get('/events/:id', getEventRegistrationControllers.getEventRegistration);
 
-eventRegistrationRoute.get('/events/:id', getEventRegistration);
-
-module.exports = eventRegistrationRoute;
+module.exports = router;
