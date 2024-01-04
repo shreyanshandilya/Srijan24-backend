@@ -65,10 +65,10 @@ const changeParticularApproval = async (req, res, next) => {
 
 const getParticularPhoneNumber = async (req, res, next) => {
   let phoneNumber = req.params.phoneNumber;
-  // console.log(phoneNumber);
+  console.log(phoneNumber);
   let purchaseItem;
   try {
-    purchaseItem = await Purchase.find({mobileNumber:phoneNumber});
+    purchaseItem = await Purchase.find();
     if (!purchaseItem) {
       return next(new HttpError("error occured try again later ", 404));
     }
