@@ -17,6 +17,7 @@ async function getSingleEvent(req, res, next) {
     if (!singleEvent) {
       return next(new HttpError("error occured try again later", 400));
     }
+    res.json(singleEvent);
   } catch (error) {
     return next(new HttpError("error occured try again later"), 400);
   }
