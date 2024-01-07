@@ -5,7 +5,7 @@ const purchaseTshirtSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    admissionNumber: {
+    email: {
       type: String,
       required: true,
     },
