@@ -8,10 +8,9 @@ const postTshirt = async (req, res, next) => {
       email,
       mobileNumber,
       tshirtSize,
-      hostel,
-      roomNumber,
+      address,
       quantity,
-      outsider
+      outsider,
     } = req.body;
     const { path: imageURL } = req.file;
     const newPurchase = new Purchase({
@@ -19,8 +18,7 @@ const postTshirt = async (req, res, next) => {
       email,
       mobileNumber,
       tshirtSize,
-      hostel,
-      roomNumber,
+      address,
       imageURL,
       outsider,
       approved: false,
@@ -71,7 +69,10 @@ const getParticularPhoneNumber = async (req, res, next) => {
   let Email = req.params.email;
   let purchaseItem;
   try {
-    purchaseItem = await Purchase.find({ mobileNumber: phoneNumber, email:Email });
+    purchaseItem = await Purchase.find({
+      mobileNumber: phoneNumber,
+      email: Email,
+    });
     // if (purchaseItem[0].email != Email) {
     //   return next(new HttpError("Email is not correct", 402));
     // }

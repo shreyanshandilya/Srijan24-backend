@@ -17,11 +17,7 @@ const purchaseTshirtSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    hostel: {
-      type: String,
-      required: true,
-    },
-    roomNumber: {
+    address: {
       type: String,
       required: true,
     },
