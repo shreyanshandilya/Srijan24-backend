@@ -6,7 +6,6 @@ const postTshirt = async (req, res, next) => {
     const {
       name,
       email,
-      email,
       mobileNumber,
       tshirtSize,
       hostel,
@@ -17,7 +16,6 @@ const postTshirt = async (req, res, next) => {
     const { path: imageURL } = req.file;
     const newPurchase = new Purchase({
       name,
-      email,
       email,
       mobileNumber,
       tshirtSize,
