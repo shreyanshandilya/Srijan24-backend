@@ -5,24 +5,26 @@ const postTshirt = async (req, res, next) => {
   try {
     const {
       name,
-      admissionNumber,
+      email,
       mobileNumber,
       tshirtSize,
       hostel,
       roomNumber,
-      quantity
+      quantity,
+      outsider
     } = req.body;
     const { path: imageURL } = req.file;
     const newPurchase = new Purchase({
       name,
-      admissionNumber,
+      email,
       mobileNumber,
       tshirtSize,
       hostel,
       roomNumber,
       imageURL,
+      outsider,
       approved: false,
-      quantity
+      quantity,
     });
     const data = await newPurchase.save();
 
@@ -51,10 +53,11 @@ const getAllOrders = async (req, res, next) => {
 const changeParticularApproval = async (req, res, next) => {
   const purchaseId = req.params.purchaseId;
   try {
-    const purchaseItem = await Purchase.findByIdAndUpdate(purchaseId,{approved:true});
+    const purchaseItem = await Purchase.findByIdAndUpdate(purchaseId, {
+      approved: true,
+    });
 
     if (!purchaseItem) {
-      console.log("not found");
       return next(new HttpError("error occured try again  later", 404));
     }
     res.status(200).json({ msg: "approval done", purchaseItem });
@@ -65,10 +68,14 @@ const changeParticularApproval = async (req, res, next) => {
 
 const getParticularPhoneNumber = async (req, res, next) => {
   let phoneNumber = req.params.phoneNumber;
-  console.log(phoneNumber);
+  let Email = req.params.email;
   let purchaseItem;
   try {
-    purchaseItem = await Purchase.find({});
+    purchaseItem = await Purchase.find({ mobileNumber: phoneNumber });
+
+    if (purchaseItem.email != Email) {
+      return next(new HttpError("Email is not correct", 402));
+    }
     if (!purchaseItem) {
       return next(new HttpError("error occured try again later ", 404));
     }

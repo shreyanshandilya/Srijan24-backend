@@ -5,7 +5,7 @@ const purchaseTshirtSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    admissionNumber: {
+    email: {
       type: String,
       required: true,
     },
@@ -29,14 +29,18 @@ const purchaseTshirtSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    approved:{
-      type:Boolean,
-      default: false
+    approved: {
+      type: Boolean,
+      default: false,
     },
-    quantity:{
-      type:Number,
-      required: true
-    }
+    quantity: {
+      type: Number,
+      required: true,
+    },
+    outsider: {
+      type: Boolean,
+      required: true,
+    },
   },
   { timestamps: true }
 );
