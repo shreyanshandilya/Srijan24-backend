@@ -68,7 +68,7 @@ const getParticularPhoneNumber = async (req, res, next) => {
   console.log(phoneNumber);
   let purchaseItem;
   try {
-    purchaseItem = await Purchase.find({"mobileNumber":{$regex :"^" + phoneNumber}});
+    purchaseItem = await Purchase.find({});
     if (!purchaseItem) {
       return next(new HttpError("error occured try again later ", 404));
     }
