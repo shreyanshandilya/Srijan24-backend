@@ -71,12 +71,12 @@ const getParticularPhoneNumber = async (req, res, next) => {
   let Email = req.params.email;
   let purchaseItem;
   try {
-    purchaseItem = await Purchase.findOne({ mobileNumber: phoneNumber });
-    if (purchaseItem.email != Email) {
-      return next(new HttpError("Email is not correct", 402));
-    }
-    if (!purchaseItem) {
-      return next(new HttpError("error occured try again later ", 404));
+    purchaseItem = await Purchase.find({ mobileNumber: phoneNumber, email:Email });
+    // if (purchaseItem[0].email != Email) {
+    //   return next(new HttpError("Email is not correct", 402));
+    // }
+    if (purchaseItem.length == 0) {
+      return next(new HttpError("no such order", 404));
     }
     res.status(200).json(purchaseItem);
   } catch (error) {
