@@ -3,7 +3,7 @@ const router = express.Router();
 const postEventRegistrationControllers = require("../controllers/teamEventRegistrationControllers");
 
 router.post(
-  "/eventRegitration",
+  "/eventRegistration",
   postEventRegistrationControllers.postEventRegistration
 );
 module.exports = router;
