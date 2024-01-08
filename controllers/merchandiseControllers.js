@@ -71,8 +71,7 @@ const getParticularPhoneNumber = async (req, res, next) => {
   let Email = req.params.email;
   let purchaseItem;
   try {
-    purchaseItem = await Purchase.find({ mobileNumber: phoneNumber });
-
+    purchaseItem = await Purchase.findOne({ mobileNumber: phoneNumber });
     if (purchaseItem.email != Email) {
       return next(new HttpError("Email is not correct", 402));
     }
