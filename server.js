@@ -48,7 +48,6 @@ app.use("/api", eventRoute);
 app.use("/api",announcementRoute);
 app.use("/api", userRoute);
 app.use("/api", otpRoute);
-
 app.use("/api", tokenRoute);
 
 app.get('/', (req, res) => {
