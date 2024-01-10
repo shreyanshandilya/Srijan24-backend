@@ -3,7 +3,7 @@ exports.ConfigMail=()=>{
     const config = {
         service : 'gmail',
         auth : {
-            user: "21je1039@iitism.ac.in",
+            user: "",
             pass: "cqrcaqapdwrshanz" ,
         }
     }
