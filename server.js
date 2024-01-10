@@ -16,6 +16,7 @@ const eventRoute = require("./routes/eventRoutes");
 const announcementRoute=require("./routes/announcementRoutes");
 const userRoute=require("./routes/userRoutes")
 const otpRoute=require('./routes/otpRoutes');
+const tokenRoute=require("./routes/tokenRoutes");
 
 const app = express();
 const path = require('path');
@@ -48,6 +49,7 @@ app.use("/api",announcementRoute);
 app.use("/api", userRoute);
 app.use("/api", otpRoute);
 
+app.use("/api", tokenRoute);
 
 app.get('/', (req, res) => {
   res.send('test');
