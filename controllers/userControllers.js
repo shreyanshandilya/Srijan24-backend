@@ -2,12 +2,13 @@ const User= require('../schemas/userSchema');
 const jwt = require("jsonwebtoken");
 const HttpError= require('../utils/HttpError');
 
+
 const signup = async (req, res, next) => {
 
-    let isISMUSer= req.body.isISM;
+    let isISMUSer= req.body.IsISM;
     let Name = req.body.Name;
     let Email = req.body.Email;
-    let PhoneNumber = req.body.Number;
+    let PhoneNumber = req.body.PhoneNumber;
     let Password = req.body.Password;
 
     if(isISMUSer){
@@ -22,7 +23,7 @@ const signup = async (req, res, next) => {
     try {
       existingUser = await User.findOne({ Email: Email });
     } catch (error) {
-      return next(new HttpError("signning up failed try again later", 500));
+      return next(new HttpError("signning up failed try again later", 404));
     }
   
     if (existingUser) {
@@ -35,9 +36,9 @@ const signup = async (req, res, next) => {
       PhoneNumber: PhoneNumber,
       Password: Password,
       Merchandise : [],
-      IsISM:isISMUSer ? true: false,
-      IsEvents:isISMUSer ? true: false,
-      IsProNight:isISMUSer ? true: false
+      IsISM:isISMUSer ,
+      IsEvents:isISMUSer ,
+      IsProNight:isISMUSer
     });
     let newUser;
     try {
@@ -48,19 +49,61 @@ const signup = async (req, res, next) => {
   
     let token;
     try {
-      token = jwt.sign({ UserId: createUser._id }, "siddharth", {
+      token = jwt.sign({ UserId: createUser._id }, "Ratul_BHai_ka_aga_koi_bol", {
         expiresIn: "30d",
       });
     } catch (err) {
       return next(new HttpError("signning up failed try again later ", 500));
     }
+
      
     console.log(token , createUser._id);
     res.json({
       Token: token,
       UserId: createUser._id,
-      IsISM: isISMUSer
+    });
+  };
+
+  const login = async (req, res, next) => {
+   
+    let Email = req.body.Email;
+    let Password = req.body.Password;
+  
+    let existingUser;
+    try {
+      existingUser = await User.findOne({ Email: Email });
+    } catch (error) {
+      return next(new HttpError("Logging up failed try agin later ", 500));
+    }
+  
+    if (!existingUser) {
+      return next(new HttpError("wrong credentials", 422));
+    }
+  
+    let isValidPassword = false;
+  
+    if (Password !=existingUser.Password) {
+      const error = new HttpError(
+        "Invalid credentials, could not log you in.",
+        403
+      );
+      return next(error);
+    }
+  
+    let token;
+    try {
+      token = jwt.sign({ UserId: existingUser._id }, "siddharth", {
+        expiresIn: "1h",
+      });
+    } catch (err) {
+      return next(new HttpError("signning up failed try again later ", 500));
+    }
+  
+    res.json({
+      UserId: existingUser._id,
+      Token: token,
     });
   };
 
   exports.signup=signup;
+  exports.login=login;

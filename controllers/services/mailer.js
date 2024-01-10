@@ -3,8 +3,8 @@ exports.ConfigMail=()=>{
     const config = {
         service : 'gmail',
         auth : {
-            user: process.env.EMAIL,
-            pass: process.env.PASSWORD,
+            user: "21je1039@iitism.ac.in",
+            pass: "cqrcaqapdwrshanz" ,
         }
     }
 

@@ -14,6 +14,8 @@ const teamEventRegistrationRoute = require("./routes/teamEventRegistrationRoute"
 const eventRegistrationRoute = require("./routes/eventRegistrationRoute");
 const eventRoute = require("./routes/eventRoutes");
 const announcementRoute=require("./routes/announcementRoutes");
+const userRoute=require("./routes/userRoutes")
+const otpRoute=require('./routes/otpRoutes');
 
 const app = express();
 const path = require('path');
@@ -43,6 +45,9 @@ app.use("/api", eventRegistrationRoute);
 app.use("/api",teamEventRegistrationRoute);
 app.use("/api", eventRoute);
 app.use("/api",announcementRoute);
+app.use("/api", userRoute);
+app.use("/api", otpRoute);
+
 
 app.get('/', (req, res) => {
   res.send('test');

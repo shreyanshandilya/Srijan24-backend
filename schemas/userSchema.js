@@ -17,6 +17,16 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  otp: {
+    type: Number,
+  },
+  otp_expiry_time:{
+    type:Date
+  },
+  verified: {
+    type: Boolean,
+    default: false,
+  },
   Merchandise: [
     {
       tshirtSize: {
@@ -42,8 +52,8 @@ const userSchema = new mongoose.Schema({
     },
   ],
   IsISM: { type: Boolean, required: true },
-  IsProNight:{type:Boolean , required:true},
-  IsEvents:{type:Boolean ,required:true}
+  IsProNight: { type: Boolean, required: true },
+  IsEvents: { type: Boolean, required: true },
 });
 
 module.exports = mongoose.model("User", userSchema);

@@ -1,12 +1,13 @@
+
 const otpGenerator = require("otp-generator");
-const User = require("../schemas/user");
+const User = require("../schemas/userSchema");
  
 const mailService=require("./services/mailer");
 const MailTemplates=require("./mailTemplate");
 // const {promisify}=require("util");
 const nodemailer = require('nodemailer');
 async function sendOTP(req, res, next){
-    const { userId } = req;
+    const userId  = req.body.UserID;
     const user = await User.findOne({ _id: userId });
   
     const new_otp = otpGenerator.generate(6, {
@@ -27,10 +28,10 @@ async function sendOTP(req, res, next){
     // TODO=>Send Mail 
   
     const message = {
-      from : process.env.EMAIL,
-      to : user.email,
+      from : "21je1039@iitism.ac.in",
+      to : user.Email,
       subject: "Account Verification for Your Chat Application",
-      html: MailTemplates.otp(user.firstName,new_otp),
+      html: MailTemplates.otp(user.Name,new_otp),
   }
   const transporter = mailService.ConfigMail();
   
@@ -47,9 +48,9 @@ async function sendOTP(req, res, next){
   
   async function verifyOTP  (req, res, next){
     // Verify OTP and update user record accordingly
-    const { email, otp } = req.body;
+    const { Email, otp } = req.body;
     const user = await User.findOne({
-      email,
+      Email,
       otp_expiry_time: { $gt: Date.now() },
     });
     if (!user) {
@@ -69,6 +70,8 @@ async function sendOTP(req, res, next){
     await user.save({ new: true, validateModifiedOnly: true });
   
     const token = signToken(user._id);
+
+
   
     res.status(200).json({
       status: "Success",
@@ -78,3 +81,5 @@ async function sendOTP(req, res, next){
     });
   };
   
+exports.sendOTP=sendOTP;
+exports.verifyOTP=verifyOTP;
