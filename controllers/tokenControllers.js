@@ -18,7 +18,7 @@ const addToken = async (req, res, next) => {
 
 const getToken = async (req, res, next) => {
     try {
-        const data = await Token.find({});
+        const data = await Token.find({}).select("_id token");
         //const finalArray = data.map((e) => e.token);
         return res.status(200).send({ success:true, data:data, error:""});
     } catch (e) {
