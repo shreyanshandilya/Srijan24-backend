@@ -7,6 +7,7 @@ module.exports = (req, res, next) => {
   }
   console.log("userAuthmiddleware");
   try {
+    console.log(req.headers);
     const token = req.headers.authorization.split(' ')[1]; 
     if (!token) {
       throw new Error('Authentication failed!');
@@ -17,7 +18,6 @@ module.exports = (req, res, next) => {
     next();
   } catch (err) {
     console.log(err)
-    const error = new HttpError('Authentication failed!', 403);
-    return next(error);
+    return next(new HttpError('Authentication failed!', 403));
   }
 };

@@ -87,31 +87,31 @@ const sendOTP_signUP = async (req, res, next) => {
 const verifyOTP_signUP = async (req, res, next) => {
   const otp = req.body.otp;
   const Email = req.body.Email;
-  const user = await User.find({Email: Email});
+  const user = await User.findOne({Email: Email});
   if (!user) {
     return next(new HttpError("user not found  ", 404));
   }
-  if (otp != user[0].otp) {
+  if (otp != user.otp) {
     try {
-      await User.findByIdAndDelete(user[0]._id);
+      await User.findByIdAndDelete(user._id);
     } catch (error) {
       return next(new HttpError("wrong otp try genrate new otp", 404));
     }
     return next(new HttpError("incorrect otp ", 404));
   }
 
-  user[0].verified = true;
-  user[0].otp = undefined;
+  user.verified = true;
+  user.otp = "notvalid";
 
   try {
-    await user[0].save();
+    await user.save();
   } catch (error) {
     console.log(error);
   }
 
   let token;
   try {
-    token = jwt.sign({ UserId: user[0]._id }, "siddharth", {
+    token = jwt.sign({ UserId: user._id }, "siddharth", {
       expiresIn: "30d",
     });
   } catch (err) {
