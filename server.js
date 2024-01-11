@@ -55,6 +55,11 @@ app.get('/', (req, res) => {
   res.send('test');
 })
 const PORT = process.env.PORT || 2000;
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:5173');
+  res.header('Access-Control-Allow-Credentials', 'true');
+  next();
+});
 
 app.use((req, res, next) => next (new HttpError('Could not find this route.', 404)));
 
