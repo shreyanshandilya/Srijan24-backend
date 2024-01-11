@@ -18,7 +18,9 @@ const tokenRoute=require("./routes/tokenRoutes");
 const app = express();
 
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({
+  credentials: true
+}));
 
 
 const DB_URL = process.env.DB_URL;
