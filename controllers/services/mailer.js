@@ -1,14 +1,12 @@
-const nodemailer = require('nodemailer');
-exports.ConfigMail=()=>{
-    const config = {
-        service : 'gmail',
-        auth : {
-            user: "",
-            pass: "cqrcaqapdwrshanz" ,
-        }
-    }
-
-    const transporter = nodemailer.createTransport(config);
-
-   return transporter;
-}
+const nodemailer = require("nodemailer");
+exports.ConfigMail = () => {
+  var transporter = nodemailer.createTransport({
+    service: "gmail",
+    secure: false,
+    auth: {
+      user: "fakeuseruser540@gmail.com",
+      pass: "vjqlnnnatpvjuozd",
+    },
+  });
+  return transporter;
+};
