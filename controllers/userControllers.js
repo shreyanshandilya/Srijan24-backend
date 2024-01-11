@@ -43,7 +43,6 @@ const HttpError= require('../utils/HttpError');
 
 
   const purchaseMerchandise= async (req,res,next)=>{
-   // use middleware first for checking ;
     console.log(req.body);
   };
 

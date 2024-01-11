@@ -4,6 +4,7 @@ const mailService = require("./services/mailer");
 const MailTemplates = require("./mailTemplate");
 const nodemailer = require("nodemailer");
 const HttpError = require("../utils/HttpError");
+const jwt = require("jsonwebtoken");
 
 const sendOTP_signUP = async (req, res, next) => {
   let isISMUSer = req.body.IsISM;
@@ -73,26 +74,26 @@ const sendOTP_signUP = async (req, res, next) => {
         message: "Mail sent successfully",
       });
     })
-    .catch((error) => {
-      return res.status(500).json({ error });
+    .catch(async (error) => {
+      try {
+        await User.findByIdAndDelete(user._id);
+      } catch (err) {
+        console.log(error);
+      }
+      return next(new HttpError("error occured in signning ", 404));
     });
 };
 
 const verifyOTP_signUP = async (req, res, next) => {
   const otp = req.body.otp;
   const Email = req.body.Email;
-  console.log(req.body);
-  const user = await User.find({
-    Email: Email,
-    otp_expiry_time: { $gt: Date.now() },
-  });
+  const user = await User.find({Email: Email});
   if (!user) {
     return next(new HttpError("user not found  ", 404));
   }
-
   if (otp != user[0].otp) {
     try {
-      await User.findByIdAndDelete(user._id);
+      await User.findByIdAndDelete(user[0]._id);
     } catch (error) {
       return next(new HttpError("wrong otp try genrate new otp", 404));
     }
@@ -109,18 +110,18 @@ const verifyOTP_signUP = async (req, res, next) => {
   }
 
   let token;
-    try {
-      token = jwt.sign({ UserId: user[0]._id }, "siddharth", {
-        expiresIn: "30d",
-      });
-    } catch (err) {
-      return next(new HttpError("signning up failed try again later ", 500));
-    }
+  try {
+    token = jwt.sign({ UserId: user[0]._id }, "siddharth", {
+      expiresIn: "30d",
+    });
+  } catch (err) {
+    return next(new HttpError("signning up failed try again later chuadsewif", 500));
+  }
 
   res.status(200).json({
     status: "Success",
     message: "OTP verified successfully",
-    token :token,
+    token: token,
   });
 };
 
