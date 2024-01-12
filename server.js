@@ -15,11 +15,7 @@ const userRoute = require("./routes/userRoutes");
 const tokenRoute = require("./routes/tokenRoutes");
 
 const app = express();
-app.use(cors({
-  origin: '*',
-  methods: ["GET", "PATCH", "POST", "PUT", "DELETE"],
-  credentials: true
-}));
+ 
 
 app.use(bodyParser.json());
 
@@ -37,18 +33,18 @@ async function main() {
 main();
 
 //headers
-// app.use((req, res, next) => {
-//   res.setHeader("Access-Control-Allow-Origin", "*");
-//   res.setHeader(
-//     "Access-Control-Allow-Headers",
-//     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-//   );
-//   res.setHeader(
-//     "Access-Control-Allow-Methods",
-//     "GET, POST, PATCH, DELETE, PUT"
-//   );
-//   next();
-// });
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+  );
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, PATCH, DELETE, PUT"
+  );
+  next();
+});
 //ROUTES
 app.use("/api", getTeamRoute);
 app.use("/api", eventRegistrationRoute);
