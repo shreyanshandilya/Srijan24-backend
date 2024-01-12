@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const HttpError = require("./utils/HttpError");
+const cors = require('cors');
 require("dotenv").config();
 
 //ROUTES IMPORT
@@ -14,6 +15,11 @@ const userRoute = require("./routes/userRoutes");
 const tokenRoute = require("./routes/tokenRoutes");
 
 const app = express();
+app.use(cors({
+  origin: '*',
+  methods: ["GET", "PATCH", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 
 app.use(bodyParser.json());
 
