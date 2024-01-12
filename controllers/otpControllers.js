@@ -24,11 +24,11 @@ const sendOTP_signUP = async (req, res, next) => {
   try {
     existingUser = await User.findOne({ Email: Email });
   } catch (error) {
-    return next(new HttpError("signning up failed try again later", 404));
+    return next(new HttpError("signing up failed try again later", 404));
   }
 
-  if (existingUser) {
-    return next(new HttpError("User already exist try again later", 422));
+  if (existingUser && existingUser.verified) {
+    return next(new HttpError("User already exists try again later", 422));
   }
 
   let new_otp = otpGenerator.generate(6, {
@@ -111,7 +111,7 @@ const verifyOTP_signUP = async (req, res, next) => {
     } catch(err) {
      console.log(err)
     }
-    return next(new HttpError("opt expired try again fron start", 400));
+    return next(new HttpError("otp expired try again fron start", 400));
   }
 
   user.verified = true;
