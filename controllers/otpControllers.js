@@ -48,7 +48,7 @@ const sendOTP_signUP = async (req, res, next) => {
     lowerCaseAlphabets: false,
   });
   new_otp = new_otp.toString();
-  const otp_expiry_time = Date.now + 10 * 60 * 60 * 100;
+  const otp_expiry_time = Date.now() + 10 * 60 * 60 * 100;
 
   const createUser = new User({
     Name: Name,
