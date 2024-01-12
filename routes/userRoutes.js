@@ -13,6 +13,6 @@ router.post("/signup/verify", otpControllers.verifyOTP_signUP);
 router.post("/login" ,userControllers.login);
 
 router.use(userAuthMiddleware);
-router.post("/purchase"  ,upload.single("image"), userControllers.purchaseMerchandise);
+router.post("/purchase"  , userControllers.purchaseMerchandise);
 
 module.exports = router;

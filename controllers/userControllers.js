@@ -53,7 +53,7 @@ const purchaseMerchandise = async (req, res, next) => {
   let tshirtSize = req.body.tshirtSize;
   let address = req.body.address;
   let quantity = req.body.quantity;
-  const { path: imageURL } = req.file;
+  const imageURL = req.body.imageURL;
   console.log(user);
   user.Merchandise.push({
     tshirtSize: tshirtSize,

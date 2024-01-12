@@ -30,6 +30,9 @@ const sendOTP_signUP = async (req, res, next) => {
   if (existingUser && existingUser.verified) {
     return next(new HttpError("User already exists try again later", 422));
   }
+  if(existingUser){
+    await User.findByIdAndDelete(existingUser._id);
+  }
 
   let new_otp = otpGenerator.generate(6, {
     upperCaseAlphabets: false,
