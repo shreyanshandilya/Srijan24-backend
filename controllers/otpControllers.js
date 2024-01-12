@@ -81,7 +81,7 @@ const sendOTP_signUP = async (req, res, next) => {
       } catch (err) {
         console.log(error);
       }
-      return next(new HttpError("error occured in signning ", 404));
+      return next(new HttpError("error occured in signing ", 404));
     });
 };
 
@@ -101,7 +101,7 @@ const verifyOTP_signUP = async (req, res, next) => {
     try {
       await User.findOneAndDelete({ Email: Email });
     } catch (error) {
-      return next(new HttpError("wrong otp try genrate new otp", 404));
+      return next(new HttpError("wrong otp try generate new otp", 404));
     }
     return next(new HttpError("incorrect otp ", 404));
   }
@@ -111,7 +111,7 @@ const verifyOTP_signUP = async (req, res, next) => {
     } catch(err) {
      console.log(err)
     }
-    return next(new HttpError("opt expier try again fron start", 400));
+    return next(new HttpError("opt expired try again fron start", 400));
   }
 
   user.verified = true;
@@ -130,7 +130,7 @@ const verifyOTP_signUP = async (req, res, next) => {
     });
   } catch (err) {
     await User.findOneAndDelete({ Email: Email });
-    return next(new HttpError("signning up failed try again later ", 500));
+    return next(new HttpError("signing up failed try again later ", 500));
   }
 
   res.status(200).json({

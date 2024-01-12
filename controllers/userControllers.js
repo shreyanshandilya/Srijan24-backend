@@ -42,11 +42,12 @@ const login = async (req, res, next) => {
 
 const purchaseMerchandise = async (req, res, next) => {
   const userId = req.userData.UserId;
+
   let user;
   try {
     user = await User.findById(userId);
   } catch (error) {
-    return next(new HttpError("user not find", 404));
+    return next(new HttpError("user not found", 404));
   }
 
   let tshirtSize = req.body.tshirtSize;
@@ -65,10 +66,10 @@ const purchaseMerchandise = async (req, res, next) => {
  let response
   try {
     response =  await user.save();
+    return res.status(200).json(response);
   } catch (error) {
     return next(new HttpError("error ", 404));
   }
-  res.json(response); 
 };
 
 exports.login = login;
