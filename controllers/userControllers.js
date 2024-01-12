@@ -34,7 +34,7 @@ const login = async (req, res, next) => {
     return next(new HttpError("signning up failed try again later ", 500));
   }
 
-  res.json({
+  return res.status(200).json({
     UserId: existingUser._id,
     Token: token,
   });
