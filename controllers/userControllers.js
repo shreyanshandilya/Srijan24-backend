@@ -73,5 +73,16 @@ const purchaseMerchandise = async (req, res, next) => {
   }
 };
 
+const getUser = async (req ,res , next)=> {
+  let userId = req.userData.UserId;
+  let response ;
+  try{
+    response = await User.findById(userId);
+  }catch(error){
+    return  next(new HttpError("can not get user , error occured" , 404));
+  }
+  res.json(response);
+}
 exports.login = login;
 exports.purchaseMerchandise = purchaseMerchandise;
+exports.getUser=getUser;

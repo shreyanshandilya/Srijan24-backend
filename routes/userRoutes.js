@@ -14,5 +14,6 @@ router.post("/login" ,userControllers.login);
 
 router.use(userAuthMiddleware);
 router.post("/purchase"  , userControllers.purchaseMerchandise);
+router.get("/getUser" ,userControllers.getUser);
 
 module.exports = router;
