@@ -13,7 +13,7 @@ exports.otp=(name,otp)=>{
     const response = {
         body: {
           name: name,
-          intro: "Thank you for choosing Our Chat Application!",
+          intro: "Thank for being a part Srijan",
           action:[
             {
             instructions: "To verify your email, enter the following OTP code:",
@@ -23,7 +23,7 @@ exports.otp=(name,otp)=>{
             },
           },
           {
-            instructions: "Note: This OTP is valid for only 10 mins",
+            instructions: "Note: This OTP is valid for only 10 mins , after 10 mins if not logged in than generate new opt ",
           }
         ],
           outro: "If you did not request this verification, please ignore this email.",

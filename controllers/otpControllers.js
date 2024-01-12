@@ -37,7 +37,7 @@ const sendOTP_signUP = async (req, res, next) => {
     lowerCaseAlphabets: false,
   });
   new_otp = new_otp.toString();
-  const otp_expiry_time = Date.now() + 10 * 60 * 1000;
+  const otp_expiry_time = Date.now() + 10*60*60;
 
   const createUser = new User({
     Name: Name,
@@ -72,11 +72,12 @@ const sendOTP_signUP = async (req, res, next) => {
       return res.status(201).json({
         status: "success",
         message: "Mail sent successfully",
+        Email: user.Email,
       });
     })
     .catch(async (error) => {
       try {
-        await User.findByIdAndDelete(user._id);
+        await User.findOneAndDelete({Email :Email});
       } catch (err) {
         console.log(error);
       }
@@ -87,17 +88,30 @@ const sendOTP_signUP = async (req, res, next) => {
 const verifyOTP_signUP = async (req, res, next) => {
   const otp = req.body.otp;
   const Email = req.body.Email;
-  const user = await User.findOne({Email: Email});
+  const user = await User.findOne({
+    Email: Email,
+  });
+  console.log(user);
+  console.log("dgjnebfawnfjcnawafsjw");
+
   if (!user) {
     return next(new HttpError("user not found  ", 404));
   }
   if (otp != user.otp) {
     try {
-      await User.findByIdAndDelete(user._id);
+      await User.findOneAndDelete({ Email: Email });
     } catch (error) {
       return next(new HttpError("wrong otp try genrate new otp", 404));
     }
     return next(new HttpError("incorrect otp ", 404));
+  }
+  if (user.otp_expiry_time < Date.now()) {
+    try {
+      await User.findOneAndDelete({ Email: Email });
+    } catch(err) {
+     console.log(err)
+    }
+    return next(new HttpError("opt expier try again fron start", 400));
   }
 
   user.verified = true;
@@ -115,7 +129,8 @@ const verifyOTP_signUP = async (req, res, next) => {
       expiresIn: "30d",
     });
   } catch (err) {
-    return next(new HttpError("signning up failed try again later chuadsewif", 500));
+    await User.findOneAndDelete({ Email: Email });
+    return next(new HttpError("signning up failed try again later ", 500));
   }
 
   res.status(200).json({
