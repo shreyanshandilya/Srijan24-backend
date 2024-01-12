@@ -11,14 +11,18 @@ const getTeamRoute = require("./routes/coreTeamRoute");
 const teamEventRegistrationRoute = require("./routes/teamEventRegistrationRoute");
 const eventRegistrationRoute = require("./routes/eventRegistrationRoute");
 const eventRoute = require("./routes/eventRoutes");
-const announcementRoute=require("./routes/announcementRoutes");
-const userRoute=require("./routes/userRoutes")
-const tokenRoute=require("./routes/tokenRoutes");
+const announcementRoute = require("./routes/announcementRoutes");
+const userRoute = require("./routes/userRoutes")
+const tokenRoute = require("./routes/tokenRoutes");
 
 const app = express();
 
 app.use(bodyParser.json());
-app.use(cors({ origin: '*' }));
+app.use(cors({
+  origin: '*',
+  methods: ["GET", "PATCH", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 
 const DB_URL = process.env.DB_URL;
 async function main() {
@@ -37,14 +41,14 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE, PUT');
-  next();
+  next();
 });
 //ROUTES
 app.use("/api", getTeamRoute);
 app.use("/api", eventRegistrationRoute);
-app.use("/api",teamEventRegistrationRoute);
+app.use("/api", teamEventRegistrationRoute);
 app.use("/api", eventRoute);
-app.use("/api",announcementRoute);
+app.use("/api", announcementRoute);
 app.use("/api", userRoute);
 app.use("/api", tokenRoute);
 
@@ -53,11 +57,11 @@ app.get('/', (req, res) => {
 })
 const PORT = process.env.PORT || 2000;
 
-app.use((req, res, next) => next (new HttpError('Could not find this route.', 404)));
+app.use((req, res, next) => next(new HttpError('Could not find this route.', 404)));
 
 app.use((error, req, res, next) => {
-    res.status(error.code || 500);
-    res.json({ message: error.message || 'An unknown error occurred!' });
+  res.status(error.code || 500);
+  res.json({ message: error.message || 'An unknown error occurred!' });
 });
 
 app.listen(PORT, () => {
