@@ -16,7 +16,14 @@ const sendOTP_signUP = async (req, res, next) => {
   if (isISMUSer) {
     let check = Email.endsWith("iitism.ac.in");
     if (!check) {
-      return next(new HttpError("Wrong Email address", 400));
+      return next(new HttpError("Use your Institute Email", 400));
+    }
+  }
+
+  if(!isISMUSer){
+    let check = Email.endsWith("iitism.ac.in");
+    if(check){
+      return next(new HttpError("Click on ISM ", 400));
     }
   }
 
@@ -24,11 +31,11 @@ const sendOTP_signUP = async (req, res, next) => {
   try {
     existingUser = await User.findOne({ Email: Email });
   } catch (error) {
-    return next(new HttpError("signing up failed try again later", 404));
+    return next(new HttpError("Signing up failed ", 404));
   }
 
   if (existingUser && existingUser.verified) {
-    return next(new HttpError("User already exists try again later", 422));
+    return next(new HttpError("User already exists ", 422));
   }
   if(existingUser){
     await User.findByIdAndDelete(existingUser._id);
@@ -58,7 +65,7 @@ const sendOTP_signUP = async (req, res, next) => {
   try {
     user = await createUser.save();
   } catch (error) {
-    return next(new HttpError("Signning up failed try again later ", 500));
+    return next(new HttpError("Signing up failed ", 500));
   }
 
   const message = {
@@ -84,7 +91,7 @@ const sendOTP_signUP = async (req, res, next) => {
       } catch (err) {
         console.log(error);
       }
-      return next(new HttpError("error occured in signing ", 404));
+      return next(new HttpError("Error occured in signing ", 404));
     });
 };
 
@@ -94,12 +101,11 @@ const verifyOTP_signUP = async (req, res, next) => {
   const user = await User.findOne({
     Email: Email,
   });
-  console.log(user);
-  console.log("dgjnebfawnfjcnawafsjw");
 
   if (!user) {
     return next(new HttpError("user not found  ", 404));
   }
+
   if (otp != user.otp) {
     try {
       await User.findOneAndDelete({ Email: Email });
@@ -108,6 +114,7 @@ const verifyOTP_signUP = async (req, res, next) => {
     }
     return next(new HttpError("incorrect otp ", 404));
   }
+
   if (user.otp_expiry_time < Date.now()) {
     try {
       await User.findOneAndDelete({ Email: Email });
@@ -123,7 +130,7 @@ const verifyOTP_signUP = async (req, res, next) => {
   try {
     await user.save();
   } catch (error) {
-    console.log(error);
+   return next(new HttpError("Signing up Failed"))
   }
 
   let token;
@@ -133,7 +140,7 @@ const verifyOTP_signUP = async (req, res, next) => {
     });
   } catch (err) {
     await User.findOneAndDelete({ Email: Email });
-    return next(new HttpError("signing up failed try again later ", 500));
+    return next(new HttpError("Signing up Failed ", 500));
   }
 
   res.status(200).json({
