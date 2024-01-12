@@ -63,26 +63,26 @@ const purchaseMerchandise = async (req, res, next) => {
     quantity: quantity,
   });
   console.log(user);
- let response
+  let response;
   try {
-    response =  await user.save();
+    response = await user.save();
     return res.status(200).json(response);
   } catch (error) {
-    console.log(error);
     return next(new HttpError("error ", 404));
   }
 };
 
-const getUser = async (req ,res , next)=> {
-  let userId = req.userData.UserId;
-  let response ;
-  try{
-    response = await User.findById(userId);
-  }catch(error){
-    return  next(new HttpError("can not get user , error occured" , 404));
+const getUser = async (req, res, next) => {
+  const userId = req.userData.UserId;
+
+  let user;
+  try {
+    user = await User.findById(userId);
+  } catch (error) {
+    return next(new HttpError("user not found", 404));
   }
-  res.json(response);
-}
+  res.json(user);
+};
 exports.login = login;
 exports.purchaseMerchandise = purchaseMerchandise;
-exports.getUser=getUser;
+exports.getUser = getUser;

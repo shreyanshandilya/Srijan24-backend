@@ -20,9 +20,9 @@ const sendOTP_signUP = async (req, res, next) => {
     }
   }
 
-  if(!isISMUSer){
+  if (!isISMUSer) {
     let check = Email.endsWith("iitism.ac.in");
-    if(check){
+    if (check) {
       return next(new HttpError("Click on ISM ", 400));
     }
   }
@@ -37,8 +37,9 @@ const sendOTP_signUP = async (req, res, next) => {
   if (existingUser && existingUser.verified) {
     return next(new HttpError("User already exists ", 422));
   }
-  if(existingUser){
+  if (existingUser) {
     await User.findByIdAndDelete(existingUser._id);
+    return next(new HttpError("User already exist", 404));
   }
 
   let new_otp = otpGenerator.generate(6, {
@@ -47,7 +48,7 @@ const sendOTP_signUP = async (req, res, next) => {
     lowerCaseAlphabets: false,
   });
   new_otp = new_otp.toString();
-  const otp_expiry_time = Date.now() + 10*60*60;
+  const otp_expiry_time = Date.now + 10 * 60 * 60 * 100;
 
   const createUser = new User({
     Name: Name,
@@ -87,10 +88,8 @@ const sendOTP_signUP = async (req, res, next) => {
     })
     .catch(async (error) => {
       try {
-        await User.findOneAndDelete({Email :Email});
-      } catch (err) {
-        console.log(error);
-      }
+        await User.findOneAndDelete({ Email: Email });
+      } catch (err) {}
       return next(new HttpError("Error occured in signing ", 404));
     });
 };
@@ -114,13 +113,14 @@ const verifyOTP_signUP = async (req, res, next) => {
     }
     return next(new HttpError("incorrect otp ", 404));
   }
+  const dateString = user.otp_expiry_time;
+  const dateObject = new Date(dateString);
 
-  if (user.otp_expiry_time < Date.now()) {
+  const timestampInSeconds = dateObject.getTime();
+  if (timestampInSeconds < Date.now()) {
     try {
       await User.findOneAndDelete({ Email: Email });
-    } catch(err) {
-     console.log(err)
-    }
+    } catch (err) {}
     return next(new HttpError("otp expired try again fron start", 400));
   }
 
@@ -130,7 +130,7 @@ const verifyOTP_signUP = async (req, res, next) => {
   try {
     await user.save();
   } catch (error) {
-   return next(new HttpError("Signing up Failed"))
+    return next(new HttpError("Signing up Failed"));
   }
 
   let token;
