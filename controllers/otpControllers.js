@@ -140,6 +140,7 @@ const verifyOTP_signUP = async (req, res, next) => {
     status: "Success",
     message: "OTP verified successfully",
     token: token,
+    user: user,
   });
 };
 
