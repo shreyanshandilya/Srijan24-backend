@@ -53,8 +53,7 @@ const purchaseMerchandise = async (req, res, next) => {
   let tshirtSize = req.body.tshirtSize;
   let address = req.body.address;
   let quantity = req.body.quantity;
-  const imageURL = req.body.imageURL;
-  console.log(user);
+  let imageURL = req.body.imageURL;
   user.Merchandise.push({
     tshirtSize: tshirtSize,
     address: address,
@@ -68,6 +67,7 @@ const purchaseMerchandise = async (req, res, next) => {
     response =  await user.save();
     return res.status(200).json(response);
   } catch (error) {
+    console.log(error);
     return next(new HttpError("error ", 404));
   }
 };
