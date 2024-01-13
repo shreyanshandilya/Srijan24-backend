@@ -79,7 +79,7 @@ const sendOTP_signUP = async (req, res, next) => {
   }
 
   const message = {
-    from: "fakeuseruser540@gmail.com",
+    from: "no.reply.srijan@gmail.com",
     to: user.Email,
     subject: "Account Verification for Your Srijan Application",
     html: MailTemplates.otp(user.Name, new_otp),
@@ -96,9 +96,12 @@ const sendOTP_signUP = async (req, res, next) => {
       });
     })
     .catch(async (error) => {
+      console.log(error);
       try {
         await User.findOneAndDelete({ Email: Email });
-      } catch (err) {}
+      } catch (err) { 
+
+      }
       return next(new HttpError("Error occured in signing ", 404));
     });
 };
