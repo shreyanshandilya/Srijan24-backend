@@ -17,12 +17,15 @@ const login = async (req, res, next) => {
     return next(new HttpError("wrong credentials", 422));
   }
 
-  if (Password != existingUser.Password) {
-    const error = new HttpError(
-      "Invalid credentials, could not log you in.",
-      403
-    );
-    return next(error);
+  let isValidPassword = false;
+  try {
+    isValidPassword = await bcrypt.compare(Password, existingUser.Password);
+  } catch (err) {
+    return next(new HttpError("Login up Failed", 500));
+  }
+
+  if (!isValidPassword) {
+    return next(new HttpError("Worng Password", 403));
   }
 
   let token;
