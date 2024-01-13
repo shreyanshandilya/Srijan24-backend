@@ -5,6 +5,7 @@ const MailTemplates = require("./mailTemplate");
 const nodemailer = require("nodemailer");
 const HttpError = require("../utils/HttpError");
 const jwt = require("jsonwebtoken");
+const bcrypt = require("bcryptjs")
 
 const sendOTP_signUP = async (req, res, next) => {
   let isISMUSer = req.body.IsISM;
@@ -48,13 +49,21 @@ const sendOTP_signUP = async (req, res, next) => {
     lowerCaseAlphabets: false,
   });
   new_otp = new_otp.toString();
+  
   const otp_expiry_time = Date.now() + 10 * 60 * 60 * 100;
+
+  let hashPassword;
+  try {
+    hashPassword = await bcrypt.hash(Password, 12);
+  } catch (error) {
+    return next(new HttpError("Signing up Failed  ", 500));
+  }
 
   const createUser = new User({
     Name: Name,
     Email: Email,
     PhoneNumber: PhoneNumber,
-    Password: Password,
+    Password: hashPassword,
     Merchandise: [],
     IsISM: isISMUSer,
     IsEvents: isISMUSer,
