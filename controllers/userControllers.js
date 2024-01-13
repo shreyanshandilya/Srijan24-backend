@@ -1,6 +1,7 @@
 const User = require("../schemas/userSchema");
 const jwt = require("jsonwebtoken");
 const HttpError = require("../utils/HttpError");
+const bcrypt = require("bcryptjs");
 
 const login = async (req, res, next) => {
   let Email = req.body.Email;
