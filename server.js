@@ -13,6 +13,7 @@ const eventRoute = require("./routes/eventRoutes");
 const announcementRoute = require("./routes/announcementRoutes");
 const userRoute = require("./routes/userRoutes");
 const tokenRoute = require("./routes/tokenRoutes");
+const checkOutPaymentRoute= require("./routes/checkOutPaymentRoutes");
 
 const app = express();
 app.use(cors({
@@ -36,27 +37,15 @@ async function main() {
 }
 main();
 
-//headers
-// app.use((req, res, next) => {
-//   res.setHeader("Access-Control-Allow-Origin", "*");
-//   res.setHeader(
-//     "Access-Control-Allow-Headers",
-//     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-//   );
-//   res.setHeader(
-//     "Access-Control-Allow-Methods",
-//     "GET, POST, PATCH, DELETE, PUT"
-//   );
-//   next();
-// });
-//ROUTES
+
 app.use("/api", getTeamRoute);
 app.use("/api", eventRegistrationRoute);
 app.use("/api", teamEventRegistrationRoute);
 app.use("/api", eventRoute);
 app.use("/api", announcementRoute);
-app.use("/api", userRoute);
 app.use("/api", tokenRoute);
+app.use("/api", userRoute);
+app.use("/api" , checkOutPaymentRoute);
 
 app.get("/", (req, res) => {
   res.send("test");
