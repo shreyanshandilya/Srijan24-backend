@@ -5,20 +5,41 @@ const User = require("../schemas/userSchema");
 
 const MakeOrder = async (req, res, next) => {
   try {
-    const razorpay =  new Razorpay({
+    const razorpay = new Razorpay({
       key_id: process.env.RAZORPAY_KEY_ID,
-      key_secret: process.env.RAZORPAY_SECRET
+      key_secret: process.env.RAZORPAY_SECRET,
     });
     // const options = req.body;
-    const options ={currency :"INR" , amount:1000 , receipt:"siddharth"}  
+    const options = {
+      amount: 1000000,
+      currency: "INR",
+      receipt: "Receipt no. 1",
+      notes: {
+        notes_key_1: "Tea, Earl Grey, Hot",
+        notes_key_2: "Tea, Earl Grey… decaf.",
+      },
+    };
 
-    console.log(options);
-    const order = await razorpay.orders.create(options);
-    console.log(order);
-    if (!order) {
-      return;
-    }
-    res.json(order);
+    const response = await fetch("https://api.razorpay.com/v1/orders", {
+      method: "POST",
+      headers: {
+        "Authorization": "Basic cnpwX2xpdmVfaENJYTI1emJ4MGljUlg6V0JoeFZJQmI2UGdvcGJCVHk5TktyT3Mx",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(options),
+    });
+    let responseData = await response.json();
+    console.log(responseData);
+    res.json(responseData);
+
+    //   console.log(options);
+    //   // const order = await razorpay.orders.create(options);
+    // //  console.log(order);
+    //   if (!order) {
+    //     return;
+    //   }
+    //   res.json(order);
+    // res.json(response);
   } catch (err) {
     console.log(err);
     return next(new HttpError(err, 500));
@@ -77,12 +98,7 @@ const ValidateOrderPayment = async (req, res, next) => {
   try {
     userr = await response.save();
   } catch {
-    return next(
-      new HttpError(
-        "Transaction failed ",
-        400
-      )
-    );
+    return next(new HttpError("Transaction failed ", 400));
   }
   console.log(userr);
 
