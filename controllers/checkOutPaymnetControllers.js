@@ -1,6 +1,7 @@
-const HttpError = require('../utils/Http-Error');
+const HttpError = require('../utils/HttpError');
 const Razorpay =require('razorpay');
 const crypto =require('crypto');
+const User = require("../schemas/userSchema");
 
 const MakeOrder=  async (req, res ,next) => {
     try {
@@ -30,6 +31,35 @@ const MakeOrder=  async (req, res ,next) => {
     if (digest !== razorpay_signature) {
       return next(new HttpError('Transaction failed , money will be refunded in 4-5 days if debited' ,400));
     }
+     
+    const userID = req.userData.userID;
+    let response ;
+    try{
+      response = await User.findById(userID);
+    }catch(error){
+      return next(new HttpError('Transaction failed , money will be refunded in 4-5 days if debited' ,400));
+    }
+
+    let  orderID= razorpay_order_id;
+    let paymentID = razorpay_payment_id;
+    let tshirtSize = req.body.tshirtSize;
+    let quantity = req.body.quantity;
+    let address = req.body.address;
+
+    response.Merchandise.push({
+      tshirtSize: tshirtSize,
+      address: address,
+      quantity: quantity,
+      orderID :orderID,
+      paymentID :paymentID
+    });
+    
+    try{
+      await response.save();
+    }catch{
+      return next(new HttpError('Transaction failed , money will be refunded in 4-5 days if debited' ,400));
+    }
+    
     res.json({
       msg: "success",
       orderId: razorpay_order_id,

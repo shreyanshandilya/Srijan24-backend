@@ -38,13 +38,13 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
       },
-      imageURL: {
-        type: String,
-        required: true,
+      orderID :{
+        type:String ,
+        required :true,
       },
-      approved: {
-        type: Boolean,
-        default: false,
+      paymentID :{
+        type:String ,
+        required:true
       },
       quantity: {
         type: Number,
