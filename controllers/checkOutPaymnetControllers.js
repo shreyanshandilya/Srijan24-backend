@@ -5,7 +5,7 @@ const User = require("../schemas/userSchema");
 
 const MakeOrder = async (req, res, next) => {
   try {
-    const razorpay = new Razorpay({
+    const razorpay =  new Razorpay({
       key_id: process.env.RAZORPAY_KEY_ID,
       key_secret: process.env.RAZORPAY_SECRET,
     });
