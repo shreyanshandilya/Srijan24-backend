@@ -11,7 +11,7 @@ const MakeOrder = async (req, res, next) => {
     });
     // const options = req.body;
     const options = {
-      amount: 1000000,
+      amount: 100,
       currency: "INR",
       receipt: "Receipt no. 1",
       notes: {
@@ -93,7 +93,6 @@ const ValidateOrderPayment = async (req, res, next) => {
     paymentID: paymentID,
   });
   let userr;
-
   console.log(response);
   try {
     userr = await response.save();
