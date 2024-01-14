@@ -9,7 +9,9 @@ const MakeOrder = async (req, res, next) => {
       key_id: process.env.RAZORPAY_KEY_ID,
       key_secret: process.env.RAZORPAY_SECRET
     });
-    const options = req.body;
+    // const options = req.body;
+    const options ={currency :"INR" , amount:1000 , receipt:"siddharth"}  
+
     console.log(options);
     const order = await razorpay.orders.create(options);
     console.log(order);
