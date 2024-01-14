@@ -7,12 +7,12 @@ const MakeOrder = async (req, res, next) => {
   try {
     const razorpay =  new Razorpay({
       key_id: process.env.RAZORPAY_KEY_ID,
-      key_secret: process.env.RAZORPAY_SECRET,
-      api_version: '1.0',
+      key_secret: process.env.RAZORPAY_SECRET
     });
     const options = req.body;
     console.log(options);
     const order = await razorpay.orders.create(options);
+    console.log(order);
     if (!order) {
       return;
     }
