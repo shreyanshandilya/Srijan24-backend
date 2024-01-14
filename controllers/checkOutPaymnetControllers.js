@@ -19,7 +19,7 @@ const MakeOrder = async (req, res, next) => {
     res.json(order);
   } catch (err) {
     console.log(err);
-    return next(new HttpError("Error occured", 500));
+    return next(new HttpError(err, 500));
   }
 };
 
