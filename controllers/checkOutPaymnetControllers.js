@@ -83,8 +83,7 @@ const ValidateOrderPayment = async (req, res, next) => {
   let paymentID = razorpay_payment_id;
   let tshirtSize = req.body.tshirtSize;
   let quantity = req.body.quantity;
-  let address = req.body.address;
-  let type = req.body.type
+  let address = req.body.addresss;
 
   response.Merchandise.push({
     tshirtSize: tshirtSize,
@@ -92,7 +91,6 @@ const ValidateOrderPayment = async (req, res, next) => {
     quantity: quantity,
     orderID: orderID,
     paymentID: paymentID,
-    type:type
   });
   let userr;
   console.log(response);
