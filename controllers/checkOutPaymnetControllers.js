@@ -9,14 +9,15 @@ const MakeOrder = async (req, res, next) => {
       key_id: process.env.RAZORPAY_KEY_ID,
       key_secret: process.env.RAZORPAY_SECRET,
     });
+    const amount = req.body.amount ;
     // const options = req.body;
     const options = {
-      amount: 100,
+      amount: amount,
       currency: "INR",
-      receipt: "Receipt no. 1",
+      receipt: "siddharth",
       notes: {
-        notes_key_1: "Tea, Earl Grey, Hot",
-        notes_key_2: "Tea, Earl Grey… decaf.",
+        notes_key_1: "Srijan Merchandise",
+        notes_key_2: "Srijan",
       },
     };
 
