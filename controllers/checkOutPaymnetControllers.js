@@ -9,7 +9,7 @@ const MakeOrder = async (req, res, next) => {
       key_id: process.env.RAZORPAY_KEY_ID,
       key_secret: process.env.RAZORPAY_SECRET,
     });
-    const amount = req.body.amount;
+    const amount = 100;
     // const options = req.body;
     const options = {
       amount: amount,
