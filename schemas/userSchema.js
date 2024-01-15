@@ -49,6 +49,11 @@ const userSchema = new mongoose.Schema({
       quantity: {
         type: String,
         required: true,
+      },
+      type:{
+        type:String ,
+        required :true ,
+        default : "Tshirt"
       }
     }
   ],
