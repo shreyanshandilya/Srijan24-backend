@@ -84,6 +84,7 @@ const ValidateOrderPayment = async (req, res, next) => {
   let tshirtSize = req.body.tshirtSize;
   let quantity = req.body.quantity;
   let address = req.body.addresss;
+  let type = req.body.type
 
   response.Merchandise.push({
     tshirtSize: tshirtSize,
@@ -91,6 +92,7 @@ const ValidateOrderPayment = async (req, res, next) => {
     quantity: quantity,
     orderID: orderID,
     paymentID: paymentID,
+    type:type
   });
   let userr;
   console.log(response);
