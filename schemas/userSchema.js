@@ -49,12 +49,8 @@ const userSchema = new mongoose.Schema({
       quantity: {
         type: String,
         required: true,
-      },
-      type: {
-        required: true,
-        type: String,
-      },
-    },
+      }
+    }
   ],
   IsISM: { type: Boolean, required: true },
   IsProNight: { type: Boolean, required: true },
