@@ -83,7 +83,7 @@ const ValidateOrderPayment = async (req, res, next) => {
   let paymentID = razorpay_payment_id;
   let tshirtSize = req.body.tshirtSize;
   let quantity = req.body.quantity;
-  let address = req.body.addresss;
+  let address = req.body.address;
   let type = req.body.type
 
   response.Merchandise.push({
