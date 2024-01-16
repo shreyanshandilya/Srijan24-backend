@@ -56,8 +56,10 @@ const ValidateOrderPayment = async (req, res, next) => {
   const sha = crypto.createHmac("sha256", process.env.RAZORPAY_SECRET);
   sha.update(`${razorpay_order_id}|${razorpay_payment_id}`);
   const digest = sha.digest("hex");
-
+  
+  console.log(digest , razorpay_signature);
   if (digest !== razorpay_signature) {
+
     return next(
       new HttpError(
         "Transaction failed , money will be refunded in 4-5 days if debited",
@@ -111,6 +113,7 @@ const ValidateOrderPayment = async (req, res, next) => {
 };
 
 const GenerateSignature = async (req, res, next) => {
+
   try {
     const { orderId, paymentId } = req.body;
     const sha = crypto.createHmac("sha256", process.env.RAZORPAY_SECRET);
