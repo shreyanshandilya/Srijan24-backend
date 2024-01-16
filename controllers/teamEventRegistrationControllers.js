@@ -1,4 +1,5 @@
 const EventRegistration = require("../schemas/teamEventRegistrationSchema");
+const User = require("../schemas/userSchema")
 const event = require("../schemas/eventSchema");
 const HttpError = require("../utils/HttpError");
 
@@ -29,6 +30,16 @@ const postEventRegistration = async (req, res ,next) => {
         attendance: false,
       });
     }
+
+    const sizeofMember = member.length;
+    for(let i = 0;i<sizeofMember;i++){
+      let email = member[i].email;
+      const data = await User.find({Email: email});
+      if(!data){
+        return next(new HttpError("Every member should be registered", 400));
+      }
+    }
+
     const newEventRegistration = new EventRegistration({
       teamName,
       teamLeader,

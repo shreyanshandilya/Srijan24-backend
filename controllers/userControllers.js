@@ -58,7 +58,7 @@ const purchaseMerchandise = async (req, res, next) => {
   let tshirtSize = req.body.tshirtSize;
   let address = req.body.address;
   let quantity = req.body.quantity;
-  let imageURL = req.body.imageURL;
+  let type = req.body.type;
 
   user.Merchandise.push({
     tshirtSize: tshirtSize,
@@ -66,7 +66,7 @@ const purchaseMerchandise = async (req, res, next) => {
     type: type,
     approved: false,
     quantity: quantity,
-    type: "Tshirt"
+    type: type
     
   });
   console.log(user);
