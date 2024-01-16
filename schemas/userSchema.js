@@ -50,11 +50,12 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
       },
-      type: {
-        required: true,
-        type: String,
-      },
-    },
+      type:{
+        type:String ,
+        required :true ,
+        default : "Tshirt"
+      }
+    }
   ],
   IsISM: { type: Boolean, required: true },
   IsProNight: { type: Boolean, required: true },
