@@ -1,9 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const checkoutPaymentControllers= require('../controllers/checkOutPaymnetControllers')
+const checkoutPaymentControllers= require('../controllers/checkOutPaymnetControllers');
+const userAuthMiddleware= require('../middleware/check-auth');
 
-router.post("/order", checkoutPaymentControllers.MakeOrder);  
-router.post("/order/validate", checkoutPaymentControllers.ValidateOrderPayment);
-router.post("/order/getSignature" , checkoutPaymentControllers.GenerateSignature);
+
+router.post("/order",userAuthMiddleware, checkoutPaymentControllers.MakeOrder);  
+router.post("/order/validate",userAuthMiddleware, checkoutPaymentControllers.ValidateOrderPayment);
+router.post("/order/getSignature" ,userAuthMiddleware, checkoutPaymentControllers.GenerateSignature);
 
 module.exports =router;

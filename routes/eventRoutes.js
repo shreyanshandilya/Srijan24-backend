@@ -1,11 +1,10 @@
 const express = require("express");
 const router = express.Router()
 
-
 const  eventControllers = require("../controllers/eventControllers");
 
+router.post("/events/:zone" , eventControllers.getEventsByZone);
+router.get("/events/:EventID" ,eventControllers.getParticularEvent);
 
-router.get("/showAllEvents", eventControllers.getEvents);
-router.get("/showEvents/:id",eventControllers.getSingleEvent);
 
 module.exports = router;

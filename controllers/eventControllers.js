@@ -1,27 +1,38 @@
-const event = require("../schemas/eventSchema");
+const Event = require("../schemas/eventSchema");
 const HttpError = require("../utils/HttpError");
 
-async function getEvents(req, res, next) {
-  try {
-    const allEvents = await event.find({});
-    res.json(allEvents);
-  } catch (error) {
-    return next(new HttpError("error occured try again later", 400));
+const getEventsByZone = async (req, res, next) => {
+
+  let Zone = req.params.zone ;
+  try{
+   let  Events = await  Event.find({Zone : Zone });
+
+   if( !Events){
+    return next(new HttpError("Error occrued try again" ,404));
+   };
+   res.json(Events);
+
+  }catch(error){
+    return next (new HttpError("Can not get events" ,404))
+  }
+
+};
+
+
+const getParticularEvent = async (req ,res ,next)=>{
+  let EventID = req.params.eventID;
+
+  try{
+    let response = await Event.findByID(EventID);
+
+     if( !response ){
+      return next(new HttpError("Can not get event " , 404));
+     }
+     res.json(response);
+  }catch(error){
+    return next(new HttpError("error occured " ,404))
   }
 }
 
-async function getSingleEvent(req, res, next) {
-  try {
-    const eventId = req.params.id;
-    const singleEvent = await event.find({ _id: eventId });
-    if (!singleEvent) {
-      return next(new HttpError("error occured try again later", 400));
-    }
-    res.json(singleEvent);
-  } catch (error) {
-    return next(new HttpError("error occured try again later"), 400);
-  }
-}
-
-exports.getEvents = getEvents;
-exports.getSingleEvent = getSingleEvent;
+exports.getEventsByZone = getEventsByZone;
+exports.getParticularEvent=getParticularEvent;
