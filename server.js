@@ -6,7 +6,6 @@ const cors = require('cors');
 require("dotenv").config();
 
 //ROUTES IMPORT
-const getTeamRoute = require("./routes/coreTeamRoute");
 const teamEventRegistrationRoute = require("./routes/teamEventRegistrationRoute");
 const eventRegistrationRoute = require("./routes/eventRegistrationRoute");
 const eventRoute = require("./routes/eventRoutes");
@@ -38,7 +37,6 @@ async function main() {
 main();
 
 
-app.use("/api", getTeamRoute);
 app.use("/api", eventRegistrationRoute);
 app.use("/api", teamEventRegistrationRoute);
 app.use("/api", eventRoute);
