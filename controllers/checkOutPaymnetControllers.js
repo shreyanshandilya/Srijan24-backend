@@ -56,6 +56,7 @@ const ValidateOrderPayment = async (req, res, next) => {
   sha.update(`${razorpay_order_id}|${razorpay_payment_id}`);
   const digest = sha.digest("hex");
 
+
   if (digest !== razorpay_signature) {
     return next(
       new HttpError(
@@ -64,6 +65,8 @@ const ValidateOrderPayment = async (req, res, next) => {
       )
     );
   }
+
+
 
   const userId = req.userData.UserId;
   console.log(userId);
@@ -109,5 +112,16 @@ const ValidateOrderPayment = async (req, res, next) => {
   });
 };
 
+const GenerateSignature= async (res,req,next)=>{
+  const { razorpay_order_id, razorpay_payment_id } = req.body;
+
+  console.log(req.body);
+  const sha = crypto.createHmac("sha256", process.env.RAZORPAY_SECRET);
+  sha.update(`${razorpay_order_id}|${razorpay_payment_id}`);
+  const digest = sha.digest("hex");
+  res.json(digest);
+}
+
+exports.GenerateSignature=GenerateSignature;
 exports.MakeOrder = MakeOrder;
 exports.ValidateOrderPayment = ValidateOrderPayment;
