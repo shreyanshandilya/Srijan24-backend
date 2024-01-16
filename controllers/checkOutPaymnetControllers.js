@@ -91,6 +91,7 @@ const ValidateOrderPayment = async (req, res, next) => {
     quantity: quantity,
     orderID: orderID,
     paymentID: paymentID,
+    type:type
   });
   let userr;
   console.log(response);

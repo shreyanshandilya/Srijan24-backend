@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema({
     required: true,
   },
   otp_expiry_time: {
-    type: Date
+    type: Date,
   },
   verified: {
     type: Boolean,
@@ -44,16 +44,16 @@ const userSchema = new mongoose.Schema({
       },
       paymentID: {
         type: String,
-        required: true
+        required: true,
       },
       quantity: {
         type: String,
         required: true,
       },
       type: {
-        type: String,
         required: true,
-      }
+        type: String,
+      },
     },
   ],
   IsISM: { type: Boolean, required: true },
