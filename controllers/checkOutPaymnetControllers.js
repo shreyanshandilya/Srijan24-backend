@@ -24,7 +24,8 @@ const MakeOrder = async (req, res, next) => {
     const response = await fetch("https://api.razorpay.com/v1/orders", {
       method: "POST",
       headers: {
-        "Authorization": "Basic cnpwX2xpdmVfaENJYTI1emJ4MGljUlg6V0JoeFZJQmI2UGdvcGJCVHk5TktyT3Mx",
+        Authorization:
+          "Basic cnpwX2xpdmVfaENJYTI1emJ4MGljUlg6V0JoeFZJQmI2UGdvcGJCVHk5TktyT3Mx",
         "Content-Type": "application/json",
       },
       body: JSON.stringify(options),
@@ -56,7 +57,6 @@ const ValidateOrderPayment = async (req, res, next) => {
   sha.update(`${razorpay_order_id}|${razorpay_payment_id}`);
   const digest = sha.digest("hex");
 
-
   if (digest !== razorpay_signature) {
     return next(
       new HttpError(
@@ -65,8 +65,6 @@ const ValidateOrderPayment = async (req, res, next) => {
       )
     );
   }
-
-
 
   const userId = req.userData.UserId;
   console.log(userId);
@@ -112,16 +110,18 @@ const ValidateOrderPayment = async (req, res, next) => {
   });
 };
 
-const GenerateSignature= async (res,req,next)=>{
-  const { razorpay_order_id, razorpay_payment_id } = req.body;
+const GenerateSignature = async (req, res, next) => {
+  try {
+    const { orderId, paymentId } = req.body;
+    const sha = crypto.createHmac("sha256", process.env.RAZORPAY_SECRET);
+    sha.update(`${orderId}|${paymentId}`);
+    const digest = sha.digest("hex");
+    res.json({ signature: digest });
+  } catch (err) {
+    return next(new HttpError("error", 500));
+  }
+};
 
-  console.log(req.body);
-  const sha = crypto.createHmac("sha256", process.env.RAZORPAY_SECRET);
-  sha.update(`${razorpay_order_id}|${razorpay_payment_id}`);
-  const digest = sha.digest("hex");
-  res.json(digest);
-}
-
-exports.GenerateSignature=GenerateSignature;
+exports.GenerateSignature = GenerateSignature;
 exports.MakeOrder = MakeOrder;
 exports.ValidateOrderPayment = ValidateOrderPayment;
