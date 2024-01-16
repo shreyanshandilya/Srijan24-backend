@@ -10,7 +10,7 @@ const MakeOrder = async (req, res, next) => {
       key_secret: process.env.RAZORPAY_SECRET,
     });
     const amount = req.body.amount;
-    // const options = req.body;
+  
     const options = {
       amount: amount,
       currency: "INR",
@@ -31,17 +31,7 @@ const MakeOrder = async (req, res, next) => {
       body: JSON.stringify(options),
     });
     let responseData = await response.json();
-    console.log(responseData);
     res.json(responseData);
-
-    //   console.log(options);
-    //   // const order = await razorpay.orders.create(options);
-    // //  console.log(order);
-    //   if (!order) {
-    //     return;
-    //   }
-    //   res.json(order);
-    // res.json(response);
   } catch (err) {
     console.log(err);
     return next(new HttpError(err, 500));
@@ -52,14 +42,11 @@ const ValidateOrderPayment = async (req, res, next) => {
   const { razorpay_order_id, razorpay_payment_id, razorpay_signature } =
     req.body;
 
-  console.log(req.body);
   const sha = crypto.createHmac("sha256", process.env.RAZORPAY_SECRET);
   sha.update(`${razorpay_order_id}|${razorpay_payment_id}`);
   const digest = sha.digest("hex");
-  
-  console.log(digest , razorpay_signature);
-  if (digest !== razorpay_signature) {
 
+  if (digest !== razorpay_signature) {
     return next(
       new HttpError(
         "Transaction failed , money will be refunded in 4-5 days if debited",
@@ -69,7 +56,7 @@ const ValidateOrderPayment = async (req, res, next) => {
   }
 
   const userId = req.userData.UserId;
-  console.log(userId);
+
   let response;
   try {
     response = await User.findById(userId);
@@ -81,7 +68,6 @@ const ValidateOrderPayment = async (req, res, next) => {
       )
     );
   }
-  console.log(response);
 
   let orderID = razorpay_order_id;
   let paymentID = razorpay_payment_id;
@@ -103,7 +89,6 @@ const ValidateOrderPayment = async (req, res, next) => {
   } catch {
     return next(new HttpError("Transaction failed ", 400));
   }
-  console.log(userr);
 
   res.json({
     msg: "success",
@@ -113,7 +98,6 @@ const ValidateOrderPayment = async (req, res, next) => {
 };
 
 const GenerateSignature = async (req, res, next) => {
-
   try {
     const { orderId, paymentId } = req.body;
     const sha = crypto.createHmac("sha256", process.env.RAZORPAY_SECRET);

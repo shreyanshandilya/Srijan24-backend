@@ -11,8 +11,7 @@ const upload = multer({ storage });
 router.post("/signup",otpControllers.sendOTP_signUP);
 router.post("/signup/verify", otpControllers.verifyOTP_signUP);
 router.post("/login" ,userControllers.login);
-router.use(userAuthMiddleware);
-router.post("/purchase"  , userControllers.purchaseMerchandise);
-router.get("/getUser" ,userControllers.getUser);
+router.post("/purchase"  ,userAuthMiddleware ,  userControllers.purchaseMerchandise);
+router.get("/getUser" ,userAuthMiddleware , userControllers.getUser);
 
 module.exports = router;
