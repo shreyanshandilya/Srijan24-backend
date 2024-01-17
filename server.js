@@ -5,10 +5,7 @@ const HttpError = require("./utils/HttpError");
 const cors = require('cors');
 require("dotenv").config();
 
-//ROUTES IMPORT
-const teamEventRegistrationRoute = require("./routes/teamEventRegistrationRoute");
-const eventRegistrationRoute = require("./routes/eventRegistrationRoute");
-const eventRoute = require("./routes/eventRoutes");
+//ROUTES IMPORT;
 const announcementRoute = require("./routes/announcementRoutes");
 const userRoute = require("./routes/userRoutes");
 const tokenRoute = require("./routes/tokenRoutes");
@@ -37,9 +34,6 @@ async function main() {
 main();
 
 
-app.use("/api", eventRegistrationRoute);
-app.use("/api", teamEventRegistrationRoute);
-app.use("/api", eventRoute);
 app.use("/api", announcementRoute);
 app.use("/api", tokenRoute);
 app.use("/api", userRoute);
