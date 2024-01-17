@@ -90,5 +90,5 @@ const getUser = async (req, res, next) => {
   res.json(user);
 };
 exports.login = login;
-exports.purchaseMerchandise = purchaseMerchandise;
+// exports.purchaseMerchandise = purchaseMerchandise;
 exports.getUser = getUser;
