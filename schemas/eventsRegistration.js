@@ -1,49 +1,49 @@
 const mongoose = require("mongoose");
 
 const EventTeamListSchema = mongoose.Schema({
-  events: {
+  EventName: {
     type: String,
     required: true,
   },
-  teams: [
+  Teams: [
     {
-      members: [
+      MembersList: [
         {
-          name: {
+          Name: {
             type: String,
             required: true,
           },
-          email: {
+          Email: {
             type: String,
             required: true,
           },
-          phone: {
+          PhoneNumber: {
             type: String,
             required: true,
           },
-          college: {
+          College: {
             type: String,
             required: true,
           },
-          instrument: {
+          Instrument: {
             type: String,
             default: null,
           },
         },
       ],
-      teamName: {
+      TeamName: {
         type: String,
         default: null,
       },
-      sponsor: {
+      IsSponsor: {
         type: Boolean,
         default: false,
       },
-      audio: {
+      Audio: {
         type: String,
         default: null,
       },
-      accompanist: {
+      Accompanist: {
         type: String,
         default: null,
       },
@@ -52,6 +52,6 @@ const EventTeamListSchema = mongoose.Schema({
 });
 
 module.exports = mongoose.model(
-  "Dataforeventsregistration",
+  "EventsData",
   EventTeamListSchema
 );

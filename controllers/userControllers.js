@@ -89,6 +89,17 @@ const getUser = async (req, res, next) => {
   }
   res.json(user);
 };
+
+const getUsers = async (req, res, next) => {
+  let users;
+  try {
+    users = await User.find({});
+  } catch (error) {
+    return next(new HttpError("user not found", 404));
+  }
+  res.json(users);
+};
 exports.login = login;
 // exports.purchaseMerchandise = purchaseMerchandise;
 exports.getUser = getUser;
+exports.getUsers = getUsers;

@@ -12,6 +12,7 @@ router.post("/signup",otpControllers.sendOTP_signUP);
 router.post("/signup/verify", otpControllers.verifyOTP_signUP);
 router.post("/login" ,userControllers.login);
 router.get("/getUser" ,userAuthMiddleware , userControllers.getUser);
+router.get("/IAmHereToGetAllUsers",userAuthMiddleware , userControllers.getUsers )
 // router.post("/purchase"  ,userAuthMiddleware ,  userControllers.purchaseMerchandise);
 
 module.exports = router;
