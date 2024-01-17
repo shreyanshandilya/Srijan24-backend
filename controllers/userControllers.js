@@ -45,43 +45,42 @@ const login = async (req, res, next) => {
   });
 };
 
-const purchaseMerchandise = async (req, res, next) => {
-  const userId = req.userData.UserId;
+// const purchaseMerchandise = async (req, res, next) => {
+//   const userId = req.userData.UserId;
 
-  let user;
-  try {
-    user = await User.findById(userId);
-  } catch (error) {
-    return next(new HttpError("user not found", 404));
-  }
+//   let user;
+//   try {
+//     user = await User.findById(userId);
+//   } catch (error) {
+//     return next(new HttpError("user not found", 404));
+//   }
 
-  let tshirtSize = req.body.tshirtSize;
-  let address = req.body.address;
-  let quantity = req.body.quantity;
-  let type = req.body.type;
+//   let tshirtSize = req.body.tshirtSize;
+//   let address = req.body.address;
+//   let quantity = req.body.quantity;
+//   let type = req.body.type;
 
-  user.Merchandise.push({
-    tshirtSize: tshirtSize,
-    address: address,
-    type: type,
-    approved: false,
-    quantity: quantity,
-    type: type
+//   user.Merchandise.push({
+//     tshirtSize: tshirtSize,
+//     address: address,
+//     type: type,
+//     approved: false,
+//     quantity: quantity,
+//     type: type
     
-  });
-  console.log(user);
-  let response;
-  try {
-    response = await user.save();
-    return res.status(200).json(response);
-  } catch (error) {
-    return next(new HttpError("error ", 404));
-  }
-};
+//   });
+//   console.log(user);
+//   let response;
+//   try {
+//     response = await user.save();
+//     return res.status(200).json(response);
+//   } catch (error) {
+//     return next(new HttpError("error ", 404));
+//   }
+// };
 
 const getUser = async (req, res, next) => {
   const userId = req.userData.UserId;
-
   let user;
   try {
     user = await User.findById(userId);
