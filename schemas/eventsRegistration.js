@@ -16,7 +16,7 @@ const EventTeamListSchema = mongoose.Schema({
           Email: {
             type: String,
             required: true,
-            unique
+            unique: true
           },
           PhoneNumber: {
             type: String,
