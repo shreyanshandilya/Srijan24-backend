@@ -60,11 +60,6 @@ const userSchema = new mongoose.Schema({
   IsISM: { type: Boolean, required: true },
   IsProNight: { type: Boolean, required: true },
   IsEvents: { type: Boolean, required: true },
-  EventsRegistered:[
-    {
-      type:String
-    }
-  ],
 });
 
 module.exports = mongoose.model("User", userSchema);

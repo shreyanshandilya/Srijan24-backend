@@ -1,10 +1,11 @@
 const EventsData = require("../schemas/eventsRegistration");
 const User = require("../schemas/userSchema");
+const UserEvents = require("../schemas/userEventsSchema");
 const HttpError = require("../utils/HttpError");
 
 const registerForEvent = async (req, res, next) => {
   let check = true;
-  console.log(req.body.Teams[0].MembersList);
+  //console.log(req.body.Teams[0].MembersList);
   for (let i = 0; i < req.body.Teams[0].MembersList.length; i++) {
     let Email = req.body.Teams[0].MembersList[i].Email;
     let dataCheck;
@@ -19,7 +20,7 @@ const registerForEvent = async (req, res, next) => {
       break;
     }
   }
-  console.log("CHECK",check);
+ // console.log("CHECK", check);
 
   if (!check) {
     return next(
@@ -59,20 +60,32 @@ const registerForEvent = async (req, res, next) => {
   let EventName = req.body.EventName;
   for (let i = 0; i < req.body.Teams[0].MembersList.length; i++) {
     let Email = req.body.Teams[0].MembersList[i].Email;
-    let user;
+    let user, UserEvent;
+
     try {
-      user = await User.findOne({ Email: Email });
+      UserEvent = await UserEvents.findOne({ Email: Email });
     } catch (error) {
       return next(new HttpError("error", 404));
     }
-  
-    console.log(user.EventsRegistered);
-    user.EventsRegistered.push(EventName);
+
+    if (!UserEvent) {
+      UserEvent = new UserEvents({
+        Email: Email,
+        EventsRegistered: EventName
+      })
+    }
+    else {
+      UserEvent.EventsRegistered.push(EventName);
+    }
+
+    // console.log(user.EventsRegistered);
+    // user.EventsRegistered.push(EventName);
 
     try {
-      await user.save();
+      let resp = await UserEvent.save();
+      console.log(resp);
     } catch (error) {
-        return next(new HttpError("error" ,404))
+      return next(new HttpError("error", 404))
     }
   }
 
