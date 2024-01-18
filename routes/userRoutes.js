@@ -13,6 +13,6 @@ router.post("/signup/verify", otpControllers.verifyOTP_signUP);
 router.post("/login" ,userControllers.login);
 router.get("/getUser" ,userAuthMiddleware , userControllers.getUser);
 router.get("/IAmHereToGetAllUsers", userControllers.getUsers )
-// router.post("/purchase"  ,userAuthMiddleware ,  userControllers.purchaseMerchandise);
+router.get("/profile/eventsRegistered"  ,userAuthMiddleware , userControllers.userEventRegistered )
 
 module.exports = router;

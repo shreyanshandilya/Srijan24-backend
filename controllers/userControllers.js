@@ -2,6 +2,8 @@ const User = require("../schemas/userSchema");
 const jwt = require("jsonwebtoken");
 const HttpError = require("../utils/HttpError");
 const bcrypt = require("bcryptjs");
+const UserEvents = require("../schemas/userEventsSchema");
+const EventsData = require("../schemas/eventsRegistration");
 
 const login = async (req, res, next) => {
   let Email = req.body.Email;
@@ -67,7 +69,7 @@ const login = async (req, res, next) => {
 //     approved: false,
 //     quantity: quantity,
 //     type: type
-    
+
 //   });
 //   console.log(user);
 //   let response;
@@ -87,6 +89,7 @@ const getUser = async (req, res, next) => {
   } catch (error) {
     return next(new HttpError("user not found", 404));
   }
+
   res.json(user);
 };
 
@@ -99,7 +102,53 @@ const getUsers = async (req, res, next) => {
   }
   res.json(users);
 };
+
+const userEventRegistered = async (req, res, next) => {
+  const userId = req.userData.UserId;
+  console.log(userId);
+  let user;
+  try {
+    user = await User.findById(userId);
+  } catch (error) {
+    return next(new HttpError("user not found", 404));
+  }
+  console.log(user);
+
+  const Email = user.Email;
+  let response;
+  try {
+    response = await UserEvents.findOne({ Email: Email });
+  } catch (error) {
+    return next(new HttpError("error occured", 404));
+  }
+  console.log(response);
+  let EventsRegisteredByUser = response.EventsRegistered;
+
+  function filterUniqueElements(arr) {
+    const uniqueElements = Array.from(new Set(arr));
+    return uniqueElements;
+  }
+  let filteredArray = filterUniqueElements(EventsRegisteredByUser);
+  console.log(filteredArray);
+  let ans = [];
+  for (let i = 0; i < filteredArray.length; i++) {
+    const value = filteredArray[i];
+    try {
+      data = await EventsData.find({
+        EventName: value,
+        "Teams.MembersList.Email": Email,
+      });
+      console.log(data);
+      ans.push(...data);
+    } catch (error) {
+      return next(new HttpError("error", 404));
+    }
+  };
+ 
+  res.json(ans);
+};
+
 exports.login = login;
-// exports.purchaseMerchandise = purchaseMerchandise;
 exports.getUser = getUser;
 exports.getUsers = getUsers;
+exports.userEventRegistered = userEventRegistered;
