@@ -9,8 +9,9 @@ require("dotenv").config();
 const announcementRoute = require("./routes/announcementRoutes");
 const userRoute = require("./routes/userRoutes");
 const tokenRoute = require("./routes/tokenRoutes");
-const checkOutPaymentRoute= require("./routes/checkOutPaymentRoutes");
-const eventTeamRegistrationRoutes= require("./routes/eventTeamRegistrationRoutes");
+const checkOutPaymentRoute = require("./routes/checkOutPaymentRoutes");
+const eventTeamRegistrationRoutes = require("./routes/eventTeamRegistrationRoutes");
+const eventRoute = require("./routes/eventRoutes");
 
 const app = express();
 app.use(cors({
@@ -38,8 +39,9 @@ main();
 app.use("/api", announcementRoute);
 app.use("/api", tokenRoute);
 app.use("/api", userRoute);
-app.use("/api" , checkOutPaymentRoute);
-app.use("/api" , eventTeamRegistrationRoutes);
+app.use("/api", checkOutPaymentRoute);
+app.use("/api", eventTeamRegistrationRoutes);
+app.use("/api", eventRoute);
 
 app.get("/", (req, res) => {
   res.send("test");
