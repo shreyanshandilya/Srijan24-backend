@@ -13,6 +13,7 @@ router.post("/signup/verify", otpControllers.verifyOTP_signUP);
 router.post("/login" ,userControllers.login);
 router.get("/getUser" ,userAuthMiddleware , userControllers.getUser);
 router.get("/IAmHereToGetAllUsers", userControllers.getUsers )
-router.get("/profile/eventsRegistered"  ,userAuthMiddleware , userControllers.userEventRegistered )
+router.get("/profile/eventsRegistered"  ,userAuthMiddleware , userControllers.userEventRegistered );
+router.get("/profile/userAccomodation" , userAuthMiddleware , userControllers.userAccomodation);
 
 module.exports = router;

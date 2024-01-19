@@ -10,8 +10,9 @@ const announcementRoute = require("./routes/announcementRoutes");
 const userRoute = require("./routes/userRoutes");
 const tokenRoute = require("./routes/tokenRoutes");
 const checkOutPaymentRoute = require("./routes/checkOutPaymentRoutes");
-const eventTeamRegistrationRoutes = require("./routes/eventTeamRegistrationRoutes");
+const eventTeamRegistrationRoute = require("./routes/eventTeamRegistrationRoutes");
 const eventRoute = require("./routes/eventRoutes");
+const accomodationRoute = require("./routes/accomodationRoutes");
 
 const app = express();
 app.use(cors({
@@ -40,8 +41,9 @@ app.use("/api", announcementRoute);
 app.use("/api", tokenRoute);
 app.use("/api", userRoute);
 app.use("/api", checkOutPaymentRoute);
-app.use("/api", eventTeamRegistrationRoutes);
+app.use("/api", eventTeamRegistrationRoute);
 app.use("/api", eventRoute);
+app.use("/api" , accomodationRoute);
 
 app.get("/", (req, res) => {
   res.send("test");

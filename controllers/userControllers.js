@@ -4,6 +4,7 @@ const HttpError = require("../utils/HttpError");
 const bcrypt = require("bcryptjs");
 const UserEvents = require("../schemas/userEventsSchema");
 const EventsData = require("../schemas/eventsRegistration");
+const Accomodation = require("../schemas/accomodationSchema");
 
 const login = async (req, res, next) => {
   let Email = req.body.Email;
@@ -148,7 +149,27 @@ const userEventRegistered = async (req, res, next) => {
   res.json(ans);
 };
 
+
+const userAccomodation =async (req,res ,next)=>{
+  const userId = req.userData.UserId;
+  let user;
+  try {
+    user = await User.findById(userId);
+  } catch (error) {
+    return next(new HttpError("user not found", 404));
+  }
+  let response;
+  try{  
+    response = await  Accomodation.find({Email: user.Email});
+    
+  }catch(error){
+    return next(new HttpError("error" ,404))
+  }
+  res.json(response);
+
+}
 exports.login = login;
 exports.getUser = getUser;
 exports.getUsers = getUsers;
 exports.userEventRegistered = userEventRegistered;
+exports.userAccomodation=userAccomodation;
