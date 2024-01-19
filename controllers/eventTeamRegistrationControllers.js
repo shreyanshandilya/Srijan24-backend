@@ -83,7 +83,7 @@ const registerForEvent = async (req, res, next) => {
 
     try {
       let resp = await UserEvent.save();
-      console.log(resp);
+      // console.log(resp);
     } catch (error) {
       return next(new HttpError("error", 404))
     }
