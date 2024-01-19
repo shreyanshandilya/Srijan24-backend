@@ -15,7 +15,7 @@ const registerForEvent = async (req, res, next) => {
       return next(new HttpError("error", 404));
     }
 
-    if (!dataCheck) {
+    if (!dataCheck||!dataCheck.IsEvents) {
       check = false;
       break;
     }
