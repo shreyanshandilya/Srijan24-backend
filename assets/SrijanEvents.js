@@ -1,7 +1,7 @@
 const EventData =[
     {
-        "EventName": "SRIJANTHROUGH MYLENS",
-        "Zone": "CINEMATOGRAPHY",  
+        "EventName": "Srijan Throuh My Lens",
+        "Zone": "Cinematography",  
         "Poster":"",
         "miniDescription": "An Online Event where participants need to capture photos related to Srijan and post it through their Instagram Story tagging handles of FotoFreaks as well as Srijan.",
         "Description": "Discover the Art in Every Frame at Srijan. \"Photography is the poetry of visuals, and Srijan is your canvas!\" Join our Instagram Story Challenge, let your lens narrate tales of campus magic, and seize the chance to win fantastic prizes. Unleash your creativity, capture Srijan's vibrant moments, and let the snapshots speak louder than words.",
@@ -26,8 +26,8 @@ const EventData =[
     }
     ,
     {
-        "EventName": "MANIPULATION WARS",
-        "Zone": "CINEMATOGRAPHY",
+        "EventName": "Manipulation Wars",
+        "Zone": "Cinematography",
         "Poster":"",
         "miniDescription": "A Live Photo Manipulation Contest on Adobe Photoshop where each team will be given a few stock images. The participants will have to make a composite image using these images. They can use any number of images from the given lot, however no external image is allowed.",
         "Description": "FotoFreaks encourages all to enter the empire of creativity through the Live Photo Manipulation Contest on Adobe Photoshop. Each team will receive a curated set of stock images, challenging participants to craft a stunning composite masterpiece. With no external images permitted, participants will unleash their artistic prowess, weaving a narrative through a collage of provided visuals.",
@@ -54,8 +54,8 @@ const EventData =[
     }
     ,
     {
-        "EventName": "GENRE-O-MANIA",
-        "Zone": "CINEMATOGRAPHY",
+        "EventName": "Genre-O-Mania",
+        "Zone": "Cinematography",
         "Poster":"",
         "miniDescription": "Love watching Reels?? Then you must have seen some of the extraordinary edits which makes us all in awe. So now is your time to showcase your video-making skills!!\nLightsCameraISM invite you to showcase your cinematic prowess in our thrilling event, GENRE-O-MANIA.",
         "Description": "If you love watching reels, you must have seen some of the extraordinary edits, which make us all in awe. So now is your time to showcase your video-making skills in Genre-O-Mania, a cinematic challenge where participants create a short video incorporating various genres of videography like Hyperlapse Magic, Paper Cutout Delight, Double Trouble Drama, or Smooth Transitions Elegance. Unleash your creativity and seize the chance to win big in this exciting cinematic showcase.",
@@ -78,8 +78,8 @@ const EventData =[
     }
     ,
     {
-        "EventName": "VLOGSTRAVAGANZA!",
-        "Zone": "CINEMATOGRAPHY",
+        "EventName": "Vlogstravaganza!",
+        "Zone": "Cinematography",
         "Poster":"",
         "miniDescription": "Participants are tasked with crafting a crazy vlog that captures every ounce of excitement, joy, and pure hilarity experienced during the event. Your mission is to create a vlog of 4-5 minutes filled with laughter, some of the performances you did, or just revelling in the festivities of Srijan and take this as a chance to\ncreate long-lasting memories.",
         "Description": "Get ready to dive headfirst into the ultimate rollercoaster of emotions, laughter, and unfiltered fun at Srijan! Brace yourselves as participants take on the challenge of crafting a crazy vlog that captures every ounce of excitement, joy, and pure hilarity experienced during the event.\nYour mission, should you choose to accept it, is to unleash your creativity and showcase the wildest, most unforgettable moments from Srijan. Whether you're rolling with laughter, engaging in epic banter, or simply reveling in the sheer joy of the festivities – we want it all captured in your vlog.\nSo, rally your friends, grab your cameras, and let the good times roll! This challenge isn't just about documenting the fun; it's about curating the essence of the Srijan experience in a way that'll have everyone laughing, reminiscing, and eagerly awaiting the next cultural fest.",
@@ -95,7 +95,7 @@ const EventData =[
     {
         "EventName": "Street Reloaded",
         "Zone": "Dance",
-        "Poster":"",
+        "Poster":"https://res.cloudinary.com/dfr1kvie3/image/upload/v1705652808/Street_Reloaded_siiw6e.jpg",
         "miniDescription": "Solo Dance Battle",
         "Description": "Whether your style is Hip-hop, Popping, Krumping or Breaking, Street Reloaded - Solo Dance Battle brings improvisation to a new level and challenges you to take over the floor. Unpredictable tunes, from mainstream hits to timeless classics, fire up the dancefloor, allowing dancers to showcase their skills and wow the crowd!",
         "Venue": "Basketball Court",
@@ -129,7 +129,7 @@ const EventData =[
     {
         "EventName": "Street Beats",
         "Zone": "Dance",
-        "Poster":"",
+        "Poster":"https://res.cloudinary.com/dfr1kvie3/image/upload/v1705652810/Street_Beats_nznboo.jpg",
         "miniDescription": "Crew Dance Battle",
         "Description": "The most awaited crew battle of the year. Be it any form or any song, Street Beats - Crew Dance Battle provides the perfect battle arena to showcase your talent. Get ready to witness a combination of exciting Judges, DJ, Emcee and of course the crews",
         "Venue": "Basketball Court",
@@ -161,7 +161,7 @@ const EventData =[
     {
         "EventName": "Reflection",
         "Zone": "Dance",
-        "Poster":"",
+        "Poster":"https://res.cloudinary.com/dfr1kvie3/image/upload/v1705653230/Reflection_lm60ke.png",
         "miniDescription": "Duo",
         "Description": "If you and your partner have outstanding synergy and coordination, then Reflection is the perfect platform to showcase your talent. Grab your partner and get the most out of this terrific chance to highlight your talent. Bear in mind that winning this competition will be quite challenging, so prepare yourself intensely and show your skills.",
         "Venue": "To be announced",
@@ -191,7 +191,7 @@ const EventData =[
     {
         "EventName": "Footloose",
         "Zone": "Dance",
-        "Poster":"",
+        "Poster":"https://res.cloudinary.com/dfr1kvie3/image/upload/v1705653130/Footloose_uhdneo.png",
         "miniDescription": "Solo Dance",
         "Description": "The ultimate solo dance face-off. It is for those who think they can set ablaze on the stage and steal the thunder while others stay watching with awe and jealousy! This is the ultimate quest for the greatest dancers",
         "Venue": "To be announced",
@@ -220,7 +220,7 @@ const EventData =[
     }
     ,
     {
-        "EventName": "HUSTLEHERD",
+        "EventName": "Hustleherd",
         "Zone": "Dance",
         "Poster":"",
         "miniDescription": "Dance",
@@ -250,7 +250,7 @@ const EventData =[
     }
     ,
     {
-        "EventName": "HARMONY",
+        "EventName": "Harmony",
         "Zone": "Music",
         "Poster":"",
         "miniDescription": "Music",
@@ -279,7 +279,7 @@ const EventData =[
     }
     ,
     {
-        "EventName": "AAROH",
+        "EventName": "Aaroh",
         "Zone": "Music",
         "Poster":"",
         "miniDescription": "Music",
@@ -309,8 +309,8 @@ const EventData =[
     }
     ,
     {
-        "EventName": "Things the Brits Ruined(debate)",
-        "Zone": " Literary",
+        "EventName": "Things the Brits Ruined (debate)",
+        "Zone": "Literary",
         "Poster":"",
         "miniDescription": "Debate Duels",
         "Description": "Where Words Collide! Gather your debate partner and join the intellectual fray. In teams of two, go head-to-head on intriguing motions. Dive into rounds of riveting discussions, armed with your perspective and passion. Prepare, present, and conquer without revealing your strategy. Score points, ascend the ranks, and aim for the thrilling knockout rounds. Be Ready to turn your words into victories.",
@@ -330,9 +330,9 @@ const EventData =[
     ,
     {
         "EventName": "The Quill Switch",
-        "Zone": " Literary",
+        "Zone": "Literary",
         "Poster":"",
-        "miniDescription": " Literary",
+        "miniDescription": "Literary",
         "Description": "Switch to a literary journey in pairs for \"The Quill Switch.\" Form teams, pick a theme, and weave a cohesive story together. But here's the twist – every 15 mins, pass your creation to your teammate. With a minimum of 4 and a maximum of 8 exchanges, communicate solely through the written word. Silence is golden; let your story speak. Ready to switch pens and perspectives?",
         "Venue": "",
         "Fees": 0,
@@ -351,7 +351,7 @@ const EventData =[
     ,
     {
         "EventName": "Folktwist",
-        "Zone": " Literary",
+        "Zone": "Literary",
         "Poster":"",
         "miniDescription": " Literary",
         "Description": "An event where your imagination takes the director's chair! Ever felt a movie's ending could've been better? Here, we'll rewrite those endings together. This engaging event lets you reimagine and reshape cinematic narratives in a fun, interactive session. Come together with fellow movie enthusiasts and let your creative juices flow, ultimately leading to cinematic reinvention at 'Folk Twist.' Let's twist those tales together!",
@@ -374,7 +374,7 @@ const EventData =[
     ,
     {
         "EventName": "Adaptation Showcase",
-        "Zone": " Literary",
+        "Zone": "Literary",
         "Poster":"",
         "miniDescription": " Literary",
         "Description": "The Adaptation Showcase, organised by BOOKCLUB IIT ISM for Srijan'24, invites participants to explore their favourite adaptations in media! Be it a book turned into a movie or a manga turned into an anime, come to the stage and talk about how good or horribly wrong the adaptation was—crack jokes, praise creative decisions and explore the limitations and strengths of various forms of media. The Adaptation Showcase will judge your speaking skills, creative thought and argumentative skills all while making you laugh! We look forward to your participation.",
@@ -389,7 +389,7 @@ const EventData =[
     },
     {
         "EventName": "Podfest",
-        "Zone": " Literary",
+        "Zone": "Literary",
         "Poster":"",
         "miniDescription": " Literary",
         "Description": "Experience the thrill of showcasing your quick thinking and captivating podcasting skills at PodFest, SRIJAN 2024, presented by LiveTalksISM. This event provides a platform for overcoming impromptu challenges, conquering your fears, and shining on stage, offering an enthralling experience for the audience. Join the Cultural Caravan and let your words become the wind, carrying the essence of diverse cultures to captivate the audience. Seize the opportunity to win fantastic prizes and make your mark in this exciting competition",
