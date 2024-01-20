@@ -2,7 +2,7 @@ const EventData =[
     {
         "EventName": "Srijan Throuh My Lens",
         "Zone": "Cinematography",  
-        "Poster":"",
+        "Poster":"https://srijan-iitism.com/assets/FilmFest.0aa5ff627365b4ef7d2f-9cFp181_.png",
         "miniDescription": "An Online Event where participants need to capture photos related to Srijan and post it through their Instagram Story tagging handles of FotoFreaks as well as Srijan.",
         "Description": "Discover the Art in Every Frame at Srijan. \"Photography is the poetry of visuals, and Srijan is your canvas!\" Join our Instagram Story Challenge, let your lens narrate tales of campus magic, and seize the chance to win fantastic prizes. Unleash your creativity, capture Srijan's vibrant moments, and let the snapshots speak louder than words.",
         "Venue": "Online",
@@ -28,7 +28,7 @@ const EventData =[
     {
         "EventName": "Manipulation Wars",
         "Zone": "Cinematography",
-        "Poster":"",
+        "Poster":"https://srijan-iitism.com/assets/FilmFest.0aa5ff627365b4ef7d2f-9cFp181_.png",
         "miniDescription": "A Live Photo Manipulation Contest on Adobe Photoshop where each team will be given a few stock images. The participants will have to make a composite image using these images. They can use any number of images from the given lot, however no external image is allowed.",
         "Description": "FotoFreaks encourages all to enter the empire of creativity through the Live Photo Manipulation Contest on Adobe Photoshop. Each team will receive a curated set of stock images, challenging participants to craft a stunning composite masterpiece. With no external images permitted, participants will unleash their artistic prowess, weaving a narrative through a collage of provided visuals.",
         "Venue": "Online",
@@ -56,7 +56,7 @@ const EventData =[
     {
         "EventName": "Genre-O-Mania",
         "Zone": "Cinematography",
-        "Poster":"",
+        "Poster":"https://srijan-iitism.com/assets/FilmFest.0aa5ff627365b4ef7d2f-9cFp181_.png",
         "miniDescription": "Love watching Reels?? Then you must have seen some of the extraordinary edits which makes us all in awe. So now is your time to showcase your video-making skills!!\nLightsCameraISM invite you to showcase your cinematic prowess in our thrilling event, GENRE-O-MANIA.",
         "Description": "If you love watching reels, you must have seen some of the extraordinary edits, which make us all in awe. So now is your time to showcase your video-making skills in Genre-O-Mania, a cinematic challenge where participants create a short video incorporating various genres of videography like Hyperlapse Magic, Paper Cutout Delight, Double Trouble Drama, or Smooth Transitions Elegance. Unleash your creativity and seize the chance to win big in this exciting cinematic showcase.",
         "Venue": "Online",
@@ -80,7 +80,7 @@ const EventData =[
     {
         "EventName": "Vlogstravaganza!",
         "Zone": "Cinematography",
-        "Poster":"",
+        "Poster":"https://srijan-iitism.com/assets/FilmFest.0aa5ff627365b4ef7d2f-9cFp181_.png",
         "miniDescription": "Participants are tasked with crafting a crazy vlog that captures every ounce of excitement, joy, and pure hilarity experienced during the event. Your mission is to create a vlog of 4-5 minutes filled with laughter, some of the performances you did, or just revelling in the festivities of Srijan and take this as a chance to\ncreate long-lasting memories.",
         "Description": "Get ready to dive headfirst into the ultimate rollercoaster of emotions, laughter, and unfiltered fun at Srijan! Brace yourselves as participants take on the challenge of crafting a crazy vlog that captures every ounce of excitement, joy, and pure hilarity experienced during the event.\nYour mission, should you choose to accept it, is to unleash your creativity and showcase the wildest, most unforgettable moments from Srijan. Whether you're rolling with laughter, engaging in epic banter, or simply reveling in the sheer joy of the festivities – we want it all captured in your vlog.\nSo, rally your friends, grab your cameras, and let the good times roll! This challenge isn't just about documenting the fun; it's about curating the essence of the Srijan experience in a way that'll have everyone laughing, reminiscing, and eagerly awaiting the next cultural fest.",
         "Venue": "Online",
@@ -222,7 +222,7 @@ const EventData =[
     {
         "EventName": "Hustleherd",
         "Zone": "Dance",
-        "Poster":"",
+        "Poster":"https://res.cloudinary.com/dfr1kvie3/image/upload/v1705652807/Hustle_Herd_i5hk2u.png",
         "miniDescription": "Dance",
         "Description": "Being a group is growing together and creating a sense of unity. When it comes to performances, having a united identity can be great for sharing experiences. Hustle Herd is here for you to show your teamwork and encourage these fantastic dance groups to showcase their talent.",
         "Venue": "To be announced",
@@ -252,7 +252,7 @@ const EventData =[
     {
         "EventName": "Harmony",
         "Zone": "Music",
-        "Poster":"",
+        "Poster":"https://srijan-iitism.com/assets/Music.c91b700a4c5acdc4bb1c-pIhgd3tj.png",
         "miniDescription": "Music",
         "Description": "Dive into the world of music at Harmony, where student bands bring the stage to life with captivating performances across all genres. There are no restrictions on the number of members in a team. Basic drum sets will be provided, allowing bands to focus on their musical mastery while arranging other instruments independently. Immerse in musical brilliance as student bands showcase their genre-defying talents.",
         "Venue": "To be announced",
@@ -281,7 +281,7 @@ const EventData =[
     {
         "EventName": "Aaroh",
         "Zone": "Music",
-        "Poster":"",
+        "Poster":"https://srijan-iitism.com/assets/Music.c91b700a4c5acdc4bb1c-pIhgd3tj.png",
         "miniDescription": "Music",
         "Description": "Calling all singing enthusiasts! Manthan presents \"Aaroh, \" a solo singing competition that invites you to pour your heart out. A unique opportunity to showcase your diverse singing talent. Get ready to make a mark in the prelims and secure your spot in the final event. Join us, impress the audience, and become the singing sensation you've always dreamed of!",
         "Venue": "To be announced",
@@ -311,7 +311,7 @@ const EventData =[
     {
         "EventName": "Things the Brits Ruined (debate)",
         "Zone": "Literary",
-        "Poster":"",
+        "Poster":"https://srijan-iitism.com/assets/Literary.ee3a4fdc591b333cb436-LmHnZZtD.png",
         "miniDescription": "Debate Duels",
         "Description": "Where Words Collide! Gather your debate partner and join the intellectual fray. In teams of two, go head-to-head on intriguing motions. Dive into rounds of riveting discussions, armed with your perspective and passion. Prepare, present, and conquer without revealing your strategy. Score points, ascend the ranks, and aim for the thrilling knockout rounds. Be Ready to turn your words into victories.",
         "Venue": "",
@@ -331,7 +331,7 @@ const EventData =[
     {
         "EventName": "The Quill Switch",
         "Zone": "Literary",
-        "Poster":"",
+        "Poster":"https://srijan-iitism.com/assets/Literary.ee3a4fdc591b333cb436-LmHnZZtD.png",
         "miniDescription": "Literary",
         "Description": "Switch to a literary journey in pairs for \"The Quill Switch.\" Form teams, pick a theme, and weave a cohesive story together. But here's the twist – every 15 mins, pass your creation to your teammate. With a minimum of 4 and a maximum of 8 exchanges, communicate solely through the written word. Silence is golden; let your story speak. Ready to switch pens and perspectives?",
         "Venue": "",
@@ -352,7 +352,7 @@ const EventData =[
     {
         "EventName": "Folktwist",
         "Zone": "Literary",
-        "Poster":"",
+        "Poster":"https://srijan-iitism.com/assets/Literary.ee3a4fdc591b333cb436-LmHnZZtD.png",
         "miniDescription": " Literary",
         "Description": "An event where your imagination takes the director's chair! Ever felt a movie's ending could've been better? Here, we'll rewrite those endings together. This engaging event lets you reimagine and reshape cinematic narratives in a fun, interactive session. Come together with fellow movie enthusiasts and let your creative juices flow, ultimately leading to cinematic reinvention at 'Folk Twist.' Let's twist those tales together!",
         "Venue": "",
@@ -375,7 +375,7 @@ const EventData =[
     {
         "EventName": "Adaptation Showcase",
         "Zone": "Literary",
-        "Poster":"",
+        "Poster":"https://srijan-iitism.com/assets/Literary.ee3a4fdc591b333cb436-LmHnZZtD.png",
         "miniDescription": " Literary",
         "Description": "The Adaptation Showcase, organised by BOOKCLUB IIT ISM for Srijan'24, invites participants to explore their favourite adaptations in media! Be it a book turned into a movie or a manga turned into an anime, come to the stage and talk about how good or horribly wrong the adaptation was—crack jokes, praise creative decisions and explore the limitations and strengths of various forms of media. The Adaptation Showcase will judge your speaking skills, creative thought and argumentative skills all while making you laugh! We look forward to your participation.",
         "Venue": "",
@@ -390,7 +390,7 @@ const EventData =[
     {
         "EventName": "Podfest",
         "Zone": "Literary",
-        "Poster":"",
+        "Poster":"https://srijan-iitism.com/assets/Literary.ee3a4fdc591b333cb436-LmHnZZtD.png",
         "miniDescription": " Literary",
         "Description": "Experience the thrill of showcasing your quick thinking and captivating podcasting skills at PodFest, SRIJAN 2024, presented by LiveTalksISM. This event provides a platform for overcoming impromptu challenges, conquering your fears, and shining on stage, offering an enthralling experience for the audience. Join the Cultural Caravan and let your words become the wind, carrying the essence of diverse cultures to captivate the audience. Seize the opportunity to win fantastic prizes and make your mark in this exciting competition",
         "Venue": "GJLT(Golden Jubilee Lecture Theatre)",
@@ -401,6 +401,66 @@ const EventData =[
         
         "Minimummembers": 2,
         "Maximummembers": 4
+    },
+    {
+        "EventName": "Let's Get Quizzical",
+        "Zone": "Quiz",
+        "Poster":"https://res.cloudinary.com/dvlxqrbjm/image/upload/v1705731475/ueuzlblpsuy3sxiyro0b.png",
+        "miniDescription": "The quiz is a MELA quiz. Centered around fun fundas from the world of music, entertainment, literature and art.",
+        "Description": "From Monalisa to Hamlet, from Beethoven to AR Rahman, work your way through the vast world of music, literature, art and entertainment in groups of 3 where every correct answer propels you closer to the final. Participate in this one and only Mela quiz held offline this Srijan and hosted by renowned quizmaster Berty Ashley.",
+        "Venue": "Offline",
+        "Fees": 0,
+        "Contactdetails": [{"name":"Avinash Verma", "phone":"8572845836"}, {"name":"Harsh Mishra", "phone":"6386697779"}],
+        "Rules": ["Each team should consist of 3 members or less.", "The quiz will be conducted offline in pen-paper mode.","The quiz will consist of 2 rounds.","Preliminary rounds will be written. Tie-breaker will be with sudden death.","Top 8-10 teams will participate in the final.","Teams can be formed by students from the same year and college.","No electronic devices are allowed during the quiz."],
+        "RuleBookLink": "https://docs.google.com/document/d/1kd1pN8Pdhzw9PBFTIo5kCTtQiuxFAKlNzj998K-Id9U/edit",
+        
+        "Minimummembers": 1,
+        "Maximummembers": 3
+    },
+    {
+        "EventName": "The Usual Fundas",
+        "Zone": "Quiz",
+        "Poster":"https://res.cloudinary.com/dvlxqrbjm/image/upload/v1705731691/mqcuirzrt3jhcu2ymo7b.png",
+        "miniDescription": "The quiz is a general quiz about everything and anything under the sun. Hosted by Renowned QM Samanway Banerjee who is popular across the country for his quizzing prowess.",
+        "Description": "An in-person general knowledge quiz about everything and anything under the sun. Renowned quizmaster Mr Samanway Banerjee, known nationwide for his exceptional quizzing skills, will host the quiz. Form teams of up to three participants from the same college and academic year. Challenge your intellect and collaborate with fellow quizzers to find the answers to diverse questions.",
+        "Venue": "Offline",
+        "Fees": 0,
+        "Contactdetails": [{"name":"Avinash Verma", "phone":"8572845836"}, {"name":"Harsh Mishra", "phone":"6386697779"}],
+        "Rules": ["Each team should consist of 3 members or less.", "The quiz will be conducted offline in pen-paper mode.","The quiz will consist of 2 rounds.","Preliminary rounds will be written. Tie-breaker will be with sudden death.","Top 8-10 teams will participate in the final.","Teams can be formed by students from the same year and college.","No electronic devices are allowed during the quiz."],
+        "RuleBookLink": "https://docs.google.com/document/d/1pV6IN_fSHVCagy9vlQ4onfQ2ByFi-oibQyGwakFg6XU/edit",
+        
+        "Minimummembers": 1,
+        "Maximummembers": 3
+    },
+    {
+        "EventName": "Queer Trivia",
+        "Zone": "Quiz",
+        "Poster":"https://res.cloudinary.com/dvlxqrbjm/image/upload/v1705731632/ohgjnyalkzubsf7va6mb.png",
+        "miniDescription": "Written quiz",
+        "Description": "Participants will take part in teams of 1-3 people. The event will be a written quiz with questions projected on the screen. The trivia will cover queer culture across the globe.",
+        "Venue": "NLHC",
+        "Fees": 0,
+        "Contactdetails": [{"name":"Anushka", "phone":"8374934030"}],
+        "Rules": ["Each team should consist of 3 members or less."],
+        "RuleBookLink": "https://docs.google.com/document/d/1PaD0hEfsQzRlCJH50fD5l8U41G5T0GF8-ApzwjRJmbE/edit",
+        
+        "Minimummembers": 1,
+        "Maximummembers": 3
+    },
+    {
+        "EventName": "GPT Quiz",
+        "Zone": "Quiz",
+        "Poster":"https://res.cloudinary.com/dvlxqrbjm/image/upload/v1705732018/wnccjh9wmnfroip2x6b6.png",
+        "miniDescription": "In house quiz.",
+        "Description": "Teams of 3 or less, no electronics, only paper and pen, offline mode and even after all these restrictions, can you triumph over difficulties and win the Science, Business and Technology quiz hosted by our QuizClub members? Let your brains speak and propel you towards victory, this Srijan.",
+        "Venue": "Offline",
+        "Fees": 0,
+        "Contactdetails": [{"name":"Avinash Verma", "phone":"8572845836"}, {"name":"Harsh Mishra", "phone":"6386697779"}],
+        "Rules": ["Each team should consist of 3 members or less.", "The quiz will be conducted offline in pen-paper mode.","The quiz will consist of 2 rounds.","Preliminary rounds will be written. Tie-breaker will be with sudden death.","Top 8-10 teams will participate in the final.","Teams can be formed by students from the same year and college.","No electronic devices are allowed during the quiz."],
+        "RuleBookLink": "https://docs.google.com/document/d/1wfWiKqkSY-LA1u9Dt6rShNmeiOcyGZDq1TKr1oUMxk4/edit",
+        
+        "Minimummembers": 1,
+        "Maximummembers": 3
     }
 ]
 module.exports = { EventData };
