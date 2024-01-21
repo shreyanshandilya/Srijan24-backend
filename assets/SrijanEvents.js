@@ -2,7 +2,7 @@ const EventData = [
     {
         "EventName": "Srijan Throuh My Lens",
         "Zone": "Cinematography",
-        "Poster": "https://srijan-iitism.com/assets/FilmFest.0aa5ff627365b4ef7d2f-9cFp181_.png",
+        "Poster": "https://res.cloudinary.com/ds6u0jd3x/image/upload/v1705859917/srijan_through_lens-min_nzrvxc.png",
         "miniDescription": "An Online Event where participants need to capture photos related to Srijan and post it through their Instagram Story tagging handles of FotoFreaks as well as Srijan.",
         "Description": "Discover the Art in Every Frame at Srijan. \"Photography is the poetry of visuals, and Srijan is your canvas!\" Join our Instagram Story Challenge, let your lens narrate tales of campus magic, and seize the chance to win fantastic prizes. Unleash your creativity, capture Srijan's vibrant moments, and let the snapshots speak louder than words.",
         "Venue": "Online",
@@ -28,7 +28,7 @@ const EventData = [
     {
         "EventName": "Manipulation Wars",
         "Zone": "Cinematography",
-        "Poster": "https://srijan-iitism.com/assets/FilmFest.0aa5ff627365b4ef7d2f-9cFp181_.png",
+        "Poster": "https://res.cloudinary.com/ds6u0jd3x/image/upload/v1705858458/Manipulation_wars_faqwfk.png",
         "miniDescription": "A Live Photo Manipulation Contest on Adobe Photoshop where each team will be given a few stock images. The participants will have to make a composite image using these images. They can use any number of images from the given lot, however no external image is allowed.",
         "Description": "FotoFreaks encourages all to enter the empire of creativity through the Live Photo Manipulation Contest on Adobe Photoshop. Each team will receive a curated set of stock images, challenging participants to craft a stunning composite masterpiece. With no external images permitted, participants will unleash their artistic prowess, weaving a narrative through a collage of provided visuals.",
         "Venue": "Online",
@@ -56,7 +56,7 @@ const EventData = [
     {
         "EventName": "Genre-O-Mania",
         "Zone": "Cinematography",
-        "Poster": "https://srijan-iitism.com/assets/FilmFest.0aa5ff627365b4ef7d2f-9cFp181_.png",
+        "Poster": "https://res.cloudinary.com/ds6u0jd3x/image/upload/v1705858466/GOM_aqcrcu.png",
         "miniDescription": "Love watching Reels?? Then you must have seen some of the extraordinary edits which makes us all in awe. So now is your time to showcase your video-making skills!!\nLightsCameraISM invite you to showcase your cinematic prowess in our thrilling event, GENRE-O-MANIA.",
         "Description": "If you love watching reels, you must have seen some of the extraordinary edits, which make us all in awe. So now is your time to showcase your video-making skills in Genre-O-Mania, a cinematic challenge where participants create a short video incorporating various genres of videography like Hyperlapse Magic, Paper Cutout Delight, Double Trouble Drama, or Smooth Transitions Elegance. Unleash your creativity and seize the chance to win big in this exciting cinematic showcase.",
         "Venue": "Online",
@@ -80,7 +80,7 @@ const EventData = [
     {
         "EventName": "Vlogstravaganza!",
         "Zone": "Cinematography",
-        "Poster": "https://srijan-iitism.com/assets/FilmFest.0aa5ff627365b4ef7d2f-9cFp181_.png",
+        "Poster": "https://res.cloudinary.com/ds6u0jd3x/image/upload/v1705858457/Vlogstravaganza_ddawat.png",
         "miniDescription": "Participants are tasked with crafting a crazy vlog that captures every ounce of excitement, joy, and pure hilarity experienced during the event. Your mission is to create a vlog of 4-5 minutes filled with laughter, some of the performances you did, or just revelling in the festivities of Srijan and take this as a chance to\ncreate long-lasting memories.",
         "Description": "Get ready to dive headfirst into the ultimate rollercoaster of emotions, laughter, and unfiltered fun at Srijan! Brace yourselves as participants take on the challenge of crafting a crazy vlog that captures every ounce of excitement, joy, and pure hilarity experienced during the event.\nYour mission, should you choose to accept it, is to unleash your creativity and showcase the wildest, most unforgettable moments from Srijan. Whether you're rolling with laughter, engaging in epic banter, or simply reveling in the sheer joy of the festivities – we want it all captured in your vlog.\nSo, rally your friends, grab your cameras, and let the good times roll! This challenge isn't just about documenting the fun; it's about curating the essence of the Srijan experience in a way that'll have everyone laughing, reminiscing, and eagerly awaiting the next cultural fest.",
         "Venue": "Online",
@@ -531,7 +531,7 @@ const EventData = [
     {
         "EventName": "Live Art",
         "Zone": "FineArts",
-        "Poster": "https://res.cloudinary.com/dvlxqrbjm/image/upload/v1705732018/wnccjh9wmnfroip2x6b6.png",
+        "Poster": "https://res.cloudinary.com/ds6u0jd3x/image/upload/v1705858453/live_art_yvuysl.png",
         "miniDescription": "The members of the club will be creating a live, on-the-spot art piece with an audience present. ",
         "Description": "Artfreaks is set to mesmerise audiences as its members embark on  live, on-the-spot art creation. While we often appreciate the beauty of complete artworks at various festivals in our college, Artfreaks is now offering a unique glimpse into the creative process. This provides spectators with an exclusive opportunity to witness the magic of artistic expression unfolding in real-time. Join in to experience the captivating synergy of paintbrushes, canvas and creativity.",
         "Venue": "Offline",
@@ -546,7 +546,7 @@ const EventData = [
     {
         "EventName": "Character Design",
         "Zone": "FineArts",
-        "Poster": "https://res.cloudinary.com/dvlxqrbjm/image/upload/v1705732018/wnccjh9wmnfroip2x6b6.png",
+        "Poster": "https://res.cloudinary.com/ds6u0jd3x/image/upload/v1705858349/characterdesign_ig4khk.png",
         "miniDescription": "Creating a character design using materials provided by us.",
         "Description": "This live event encourages artists to ignite their imagination using an assorted mix of on-the-spot materials. Picture yourself navigating through the challenge of diverse artistic mediums,crafting characters that surpass expectations. Witness your creations breathe life and soar to new heights on ArtFreaks' official Instagram and Facebook pages.",
         "Venue": "Offline",
@@ -566,7 +566,7 @@ const EventData = [
     {
         "EventName": "Face Painting",
         "Zone": "FineArts",
-        "Poster": "https://res.cloudinary.com/dvlxqrbjm/image/upload/v1705732018/wnccjh9wmnfroip2x6b6.png",
+        "Poster": "https://res.cloudinary.com/ds6u0jd3x/image/upload/v1705858606/FACE_PAINTING_gutrpv.png",
         "miniDescription": "It is a competition for a team of two, where one of the participants needs to paint on the face of the other participant.",
         "Description": "Join the Face Painting Competition, a dynamic challenge for teams of two! In this, one team member showcases their artistic flair by painting on the face of their partner. With a theme revealed on the spot, imagination knows no bounds. Teams can bring their materials- “But what shall we do if we do not have our own materials?” No worries! as all the essentials like colours, paintbrushes, cups and tissue papers, will be provided. Let your creativity and originality shine in this lively and colourful competition.",
         "Venue": "Offline",
@@ -657,7 +657,7 @@ const EventData = [
     {
         "EventName": "You Laugh You Lose",
         "Zone": "Comedy",
-        "Poster": "https://res.cloudinary.com/dvlxqrbjm/image/upload/v1705732018/wnccjh9wmnfroip2x6b6.png",
+        "Poster": "https://res.cloudinary.com/ds6u0jd3x/image/upload/v1705858460/You_Laugh_you_lose_vq7zme.png",
         "miniDescription": "God gives their toughest battles to their funniest soldiers!",
         "Description": "Get ready for the grand showdown of laughter and comedic chaos at the Comedy Club's 'You Laugh, You Lose challenge!'. Teams will battle it out in the ultimate face-off, armed with water-filled mouths and a mission to keep a straight face while the opponents throw their comedic grenades at them. This is straight up war! Soldiers, remember to keep those lips sealed tight with the toughest poker face, or risk a waterlogged exit - it's comedy or dampness!",
         "Venue": "Offline",
@@ -683,7 +683,7 @@ const EventData = [
     {
         "EventName": "Saanp Tank",
         "Zone": "Comedy",
-        "Poster": "https://res.cloudinary.com/dvlxqrbjm/image/upload/v1705732018/wnccjh9wmnfroip2x6b6.png",
+        "Poster": "https://res.cloudinary.com/ds6u0jd3x/image/upload/v1705858454/saanp_tank_1_ageceu.png",
         "miniDescription": "Dive into the entrepreneurial waters at our Saanp Tank . Expect laughter, creativity, and a splash of business brilliance. Join us for a funtastic event - where ideas swim or sink!",
         "Description": "We are delighted to introduce 'Saamp Tank,' a comedic adaptation inspired by the esteemed original Shark Tank. Teams armed with wit, humor and innovation, pitch their unique products to our panel of judges. The twist lies in the selection of these products—each one deliberately crafted to be outlandishly bizarre and practically impossible to present with a straight face.",
         "Venue": "Offline",
@@ -706,3 +706,4 @@ const EventData = [
 
 ]
 module.exports = { EventData };
+ 
