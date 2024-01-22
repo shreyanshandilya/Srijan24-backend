@@ -50,6 +50,10 @@ const EventTeamListSchema = mongoose.Schema({
       ReferralID:{
         type: String,
         default:null,
+      },
+      Genre:{
+        type:[String],
+        default:null
       }
     },
   ],
