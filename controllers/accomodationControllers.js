@@ -93,7 +93,12 @@ const AccomodationPaymentAndPurchase = async (req, res, next) => {
     );
   }
   console.log(response);
-  let manav= Pacakage === "bronze" ? false : true ;
+  let manav;
+ if( Pacakage == "bronze" || Pacakage=="basic" || Pacakage == "essential"){
+    manav = false;
+ }else{
+  manav = true;
+ }
   let createAccomodation = new Accomodation({
     Email: Email,
     Pacakage: Pacakage,
