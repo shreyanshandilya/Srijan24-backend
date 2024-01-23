@@ -4,6 +4,7 @@ const UserEvents = require("../schemas/userEventsSchema");
 const HttpError = require("../utils/HttpError");
 
 const registerForEvent = async (req, res, next) => {
+
   let check = true;
   //console.log(req.body.Teams[0].MembersList);
   for (let i = 0; i < req.body.Teams[0].MembersList.length; i++) {
@@ -12,10 +13,11 @@ const registerForEvent = async (req, res, next) => {
     try {
       dataCheck = await User.findOne({ Email: Email });
     } catch {
-      return next(new HttpError("error", 404));
+      return next(new HttpError( `${Email} is not registered`, 404));
     }
 
     if (!dataCheck||!dataCheck.IsEvents) {
+
       check = false;
       break;
     }
@@ -35,7 +37,7 @@ const registerForEvent = async (req, res, next) => {
   try {
     response = await EventsData.findOne({ EventName: req.body.EventName });
   } catch {
-    return next(new HttpError("Cannot get user try again", 404));
+    return next(new HttpError("Error event not found ", 404));
   }
 
   if (!response) {
@@ -50,7 +52,7 @@ const registerForEvent = async (req, res, next) => {
   try {
     responseData = await response.save();
   } catch (error) {
-    return next(new HttpError("error", 404));
+    return next(new HttpError("Error occured ...", 404));
   }
 
   if (!responseData) {
