@@ -168,8 +168,32 @@ const userAccomodation =async (req,res ,next)=>{
   res.json(response);
 
 }
+
+const accomodationData= async(req,res,next)=>{
+  let response ;
+  try{
+    response= await Accomodation.find();
+
+  }catch(error){
+    return next(new HttpError("Error occured in fetching data  of accomdation" ,404))
+  }
+  for(let  i=0 ;i<response.length  ;i++){
+    let Email= response[i].Email;
+    let data;
+    try{
+      data= await User.findOne({Email :Email});
+      response[i] ={...response[i]._doc  , userData : data};
+    }catch(error){
+      return next(new HttpError("error" ,404));
+    }
+
+  }
+  res.json(response);
+
+}
 exports.login = login;
 exports.getUser = getUser;
 exports.getUsers = getUsers;
 exports.userEventRegistered = userEventRegistered;
 exports.userAccomodation=userAccomodation;
+exports.accomodationData=accomodationData;
