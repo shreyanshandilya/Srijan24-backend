@@ -15,5 +15,6 @@ router.get("/getUser" ,userAuthMiddleware , userControllers.getUser);
 router.get("/IAmHereToGetAllUsers", userControllers.getUsers )
 router.get("/profile/eventsRegistered"  ,userAuthMiddleware , userControllers.userEventRegistered );
 router.get("/profile/userAccomodation" , userAuthMiddleware , userControllers.userAccomodation);
+router.get("/accomodationData" ,userControllers.accomodationData);
 
 module.exports = router;
