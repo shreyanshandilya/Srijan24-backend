@@ -54,6 +54,10 @@ const EventTeamListSchema = mongoose.Schema({
       Genre:{
         type:[String],
         default:null
+      },
+      Round1Preference:{
+        type:String,
+        default:null
       }
     },
   ],
