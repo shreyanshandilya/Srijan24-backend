@@ -10,7 +10,7 @@ const MakeOrder = async (req, res, next) => {
       key_secret: process.env.RAZORPAY_SECRET,
     });
     const amount = req.body.amount;
-  
+
     const options = {
       amount: amount,
       currency: "INR",
@@ -39,6 +39,7 @@ const MakeOrder = async (req, res, next) => {
 };
 
 const ValidateOrderPayment = async (req, res, next) => {
+
   const { razorpay_order_id, razorpay_payment_id, razorpay_signature } =
     req.body;
 
@@ -69,6 +70,9 @@ const ValidateOrderPayment = async (req, res, next) => {
     );
   }
 
+  console.log(response);
+  console.log(req.body);
+
   let orderID = razorpay_order_id;
   let paymentID = razorpay_payment_id;
   let tshirtSize = req.body.tshirtSize;
@@ -76,14 +80,40 @@ const ValidateOrderPayment = async (req, res, next) => {
   let address = req.body.addresss;
   let type = req.body.type;
 
-  response.Merchandise.push({
-    tshirtSize: tshirtSize,
-    address: address,
-    quantity: quantity,
-    orderID: orderID,
-    paymentID: paymentID,
-    type : type 
-  });
+  if (req.body.type === "Tshirt + Hoodie Combo") {
+    response.Merchandise.push(
+      {
+        tshirtSize: tshirtSize,
+        address: address,
+        quantity: quantity,
+        orderID: orderID,
+        paymentID: paymentID,
+        type: type,
+      }
+    );
+    response.Merchandise.push(
+      {
+        tshirtSize: hoodieSize,
+        address: address,
+        quantity: quantity,
+        orderID: orderID,
+        paymentID: paymentID,
+        type: type,
+      }
+    );
+    
+
+  } else {
+    response.Merchandise.push({
+      tshirtSize: tshirtSize,
+      address: address,
+      quantity: quantity,
+      orderID: orderID,
+      paymentID: paymentID,
+      type: type,
+    });
+  }
+
   let userr;
   console.log(response);
   try {
