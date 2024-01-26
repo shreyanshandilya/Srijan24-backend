@@ -88,17 +88,17 @@ const ValidateOrderPayment = async (req, res, next) => {
         quantity: quantity,
         orderID: orderID,
         paymentID: paymentID,
-        type: type,
+        type: "tshirt",
       }
     );
     response.Merchandise.push(
       {
-        tshirtSize: hoodieSize,
+        tshirtSize: req.body.hoodieSize,
         address: address,
         quantity: quantity,
         orderID: orderID,
         paymentID: paymentID,
-        type: type,
+        type: "hoodie",
       }
     );
     
