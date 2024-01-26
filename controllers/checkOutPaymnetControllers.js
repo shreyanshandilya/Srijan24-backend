@@ -101,8 +101,6 @@ const ValidateOrderPayment = async (req, res, next) => {
         type: "hoodie",
       }
     );
-    
-
   } else {
     response.Merchandise.push({
       tshirtSize: tshirtSize,
