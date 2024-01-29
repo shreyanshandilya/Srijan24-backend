@@ -482,7 +482,7 @@ const EventData = [
     {
         "EventName": "Paridhaan",
         "Zone": "Fashion",
-        "Poster": "https://res.cloudinary.com/dvlxqrbjm/image/upload/v1705732018/wnccjh9wmnfroip2x6b6.png",
+        "Poster": "",
         "miniDescription": "Showcase of talent, creativity, and glamor.",
         "Description": "Paridhan welcomes everyone to unleash their creativity, where imagination takes the spotlight. Teams are tasked to express themselves within a chosen theme, divulged to organisers pre event, with inspiring unique costumes and performances. In the grand finale 'Beauty & Geeks', we witness the intriguing contrast between glamour and intellect.Participants let their imaginations run wild and bring the captivating theme to life. ",
         "Venue": "Offline",
@@ -506,7 +506,7 @@ const EventData = [
     {
         "EventName": "Campus Princess",
         "Zone": "Fashion",
-        "Poster": "https://res.cloudinary.com/dvlxqrbjm/image/upload/v1705732018/wnccjh9wmnfroip2x6b6.png",
+        "Poster": "",
         "miniDescription": "Showcase of talent, creativity, and glamor.",
         "Description": "Step into the spotlight and let your charisma shine in our thrilling Personality Hunt Competition! Showcase your unique charm, wit, and talent as you engage in a series of exciting challenges that celebrate individuality and confidence.",
         "Venue": "Offline",

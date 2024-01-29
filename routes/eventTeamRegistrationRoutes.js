@@ -5,5 +5,6 @@ const teamControllers = require("../controllers/eventTeamRegistrationControllers
 
 
 router.post("/event/register",teamControllers.registerForEvent );  
+router.get("/event/registeredEvents",teamControllers.getEventRegistration );
 
 module.exports =router;
