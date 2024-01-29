@@ -596,7 +596,7 @@ const EventData = [
             "The organizers are not responsible for any delays of the pageant.",
             "Exceeding the time limit will cause deduction of 5 marks per 10 seconds.",
             "Any incorrect information will result in disqualification whether discovered prior to, during, or after the finals."
-
+        ],
         RuleBookLink:
           "https://docs.google.com/document/d/1qVgtpUZFsNC4W1tsHvSW-578uJb_DRj8-m-Hn3VRLwU/edit?usp=drive_link",
     
