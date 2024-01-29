@@ -183,7 +183,7 @@ const ValidateOrderPaymentOffer = async (req, res, next) => {
       paymentID: paymentID,
       type: type,
     });
-  }else if( type = "Hoodie"){
+  }else if( type === "Hoodie"){
     response.Merchandise.push({
       tshirtSize: hoodieSize1,
       address: address,
