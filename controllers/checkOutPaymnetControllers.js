@@ -150,7 +150,7 @@ const ValidateOrderPaymentOffer = async (req, res, next) => {
   let type = req.body.type;
 
  
-  if(type = "Tshirt"){
+  if(type === "Tshirt"){
     response.Merchandise.push({
       tshirtSize: tshirtSize1,
       address: address,
