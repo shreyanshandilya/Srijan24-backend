@@ -458,6 +458,145 @@ const EventData = [
           "Drum set (basic one) will be provided to the bands. Bands need to arrange for their instruments themselves. A total prize money of Rs. 25,000 for the event No 2 bands can have the same members playing the same role.",
           "There is no restriction on the number of members in the band.",
         ],
+        "RuleBookLink": "https://docs.google.com/document/d/1X4a9gORtvr-olsysWWjjWAVhk_ngMzRFIDkKWJCqLrg/edit",
+
+        "Minimummembers": 1,
+        "Maximummembers": 50
+    },
+    {
+        "EventName": "Adaptation Showcase",
+        "Zone": "Literary",
+        "Poster": "https://srijan-iitism.com/assets/Literary.ee3a4fdc591b333cb436-LmHnZZtD.png",
+        "miniDescription": " Literary",
+        "Description": "The Adaptation Showcase, organised by BOOKCLUB IIT ISM for Srijan'24, invites participants to explore their favourite adaptations in media! Be it a book turned into a movie or a manga turned into an anime, come to the stage and talk about how good or horribly wrong the adaptation was—crack jokes, praise creative decisions and explore the limitations and strengths of various forms of media. The Adaptation Showcase will judge your speaking skills, creative thought and argumentative skills all while making you laugh! We look forward to your participation.",
+        "Venue": "",
+        "Fees": 0,
+        "Contactdetails": [],
+        "Rules": ["Each participant will have a maximum of 10 minutes to present their chosen adaptation", "Overtime may result in point deductions or disqualification.", "During panel discussions and participant showcases, audience members can participate in Q&A sessions.", "Entries will be judged based on creativity,depth of analysis, presentation skills, and overall engagement with the audience.", "Google Form will be circulated in whichyou have to write about your basic adaptation type before main showcase.", "Date and time will be announced till then Have fun!"],
+        "RuleBookLink": "https://drive.google.com/file/d/1PICZf1ztZvjyX1d0L2fIEDNCNf7D8P1s/view?usp=drive_link",
+
+        "Minimummembers": 1,
+        "Maximummembers": 1
+    },
+    {
+        "EventName": "Podfest",
+        "Zone": "Literary",
+        "Poster": "https://srijan-iitism.com/assets/Literary.ee3a4fdc591b333cb436-LmHnZZtD.png",
+        "miniDescription": " Literary",
+        "Description": "Experience the thrill of showcasing your quick thinking and captivating podcasting skills at PodFest, SRIJAN 2024, presented by LiveTalksISM. This event provides a platform for overcoming impromptu challenges, conquering your fears, and shining on stage, offering an enthralling experience for the audience. Join the Cultural Caravan and let your words become the wind, carrying the essence of diverse cultures to captivate the audience. Seize the opportunity to win fantastic prizes and make your mark in this exciting competition",
+        "Venue": "GJLT(Golden Jubilee Lecture Theatre)",
+        "Fees": 0,
+        "Contactdetails": [{ "name": "Harshita Mahbubani", "phone": "9460682441" }, { "name": "Prajesh Anand", "phone": "8503086164" }],
+        "Rules": ["Props that will be provided: 2 tables, 5 chairs, 3 Microphones.", "No kind of absurd language or misbehaviour in the name of the character will be tolerated.", "Any team indulging in any such discrepancy will be disqualified straight away.", "The podcasts should be conducted in either English or Hindi, or both.", "You can come with a team of 2 to 4 members or come solo, and we will try to team you up with other solo participants.", "For the first round, teams will be called up randomly. Participants have the flexibility to select any theme that interests them, ranging from comedy and history to crime stories or any other topic, for their role-playing or discussion activities. They can play characters to talk related to the theme or just discuss themselves related to the genre. They will be given 5 minutes to discuss among themselves, after which each pair will conduct a podcast for 5 minutes each.", "For fun elements, each audience member will have the opportunity to ask three questions to the guests during the podcast.", "After the first round, the top 5 teams will advance to the second round.", "In the second round, you will be given themes/genres by us, and you have to act on them as a story-telling podcast. Teams will have 10 minutes to prepare for the given theme and 7 minutes to conduct the podcast.", "Penalty: 10 marks will be deducted for every additional minute. After the 12th minute, the participants will be asked to clear the stage with an overall penalty of 40 marks. The participants will be able to view a timer countdown for 5 minutes at all times. In addition, they will be given a warning when 1 minute is left on the clock.", "All the pairs would be judged on the following parameters by considering the cumulative performance of the guest and host."],
+        "RuleBookLink": "https://docs.google.com/document/d/1kdBTZdk7DvYNWZhc7uedtMYovMGnPrIila-ijiEksIE/edit?usp=drive_link",
+
+        "Minimummembers": 2,
+        "Maximummembers": 4
+    },
+    {
+        "EventName": "Let's Get Quizzical",
+        "Zone": "Quiz",
+        "Poster": "https://res.cloudinary.com/dvlxqrbjm/image/upload/v1705731475/ueuzlblpsuy3sxiyro0b.png",
+        "miniDescription": "The quiz is a MELA quiz. Centered around fun fundas from the world of music, entertainment, literature and art.",
+        "Description": "From Monalisa to Hamlet, from Beethoven to AR Rahman, work your way through the vast world of music, literature, art and entertainment in groups of 3 where every correct answer propels you closer to the final. Participate in this one and only Mela quiz held offline this Srijan and hosted by renowned quizmaster Berty Ashley.",
+        "Venue": "Offline",
+        "Fees": 0,
+        "Contactdetails": [{ "name": "Avinash Verma", "phone": "8572845836" }, { "name": "Harsh Mishra", "phone": "6386697779" }],
+        "Rules": ["Each team should consist of 3 members or less.", "The quiz will be conducted offline in pen-paper mode.", "The quiz will consist of 2 rounds.", "Preliminary rounds will be written. Tie-breaker will be with sudden death.", "Top 8-10 teams will participate in the final.", "Teams can be formed by students from the same year and college.", "No electronic devices are allowed during the quiz."],
+        "RuleBookLink": "https://docs.google.com/document/d/1kd1pN8Pdhzw9PBFTIo5kCTtQiuxFAKlNzj998K-Id9U/edit",
+
+        "Minimummembers": 1,
+        "Maximummembers": 3
+    },
+    {
+        "EventName": "The Usual Fundas",
+        "Zone": "Quiz",
+        "Poster": "https://res.cloudinary.com/dvlxqrbjm/image/upload/v1705731691/mqcuirzrt3jhcu2ymo7b.png",
+        "miniDescription": "The quiz is a general quiz about everything and anything under the sun. Hosted by Renowned QM Samanway Banerjee who is popular across the country for his quizzing prowess.",
+        "Description": "An in-person general knowledge quiz about everything and anything under the sun. Renowned quizmaster Mr Samanway Banerjee, known nationwide for his exceptional quizzing skills, will host the quiz. Form teams of up to three participants from the same college and academic year. Challenge your intellect and collaborate with fellow quizzers to find the answers to diverse questions.",
+        "Venue": "Offline",
+        "Fees": 0,
+        "Contactdetails": [{ "name": "Avinash Verma", "phone": "8572845836" }, { "name": "Harsh Mishra", "phone": "6386697779" }],
+        "Rules": ["Each team should consist of 3 members or less.", "The quiz will be conducted offline in pen-paper mode.", "The quiz will consist of 2 rounds.", "Preliminary rounds will be written. Tie-breaker will be with sudden death.", "Top 8-10 teams will participate in the final.", "Teams can be formed by students from the same year and college.", "No electronic devices are allowed during the quiz."],
+        "RuleBookLink": "https://docs.google.com/document/d/1pV6IN_fSHVCagy9vlQ4onfQ2ByFi-oibQyGwakFg6XU/edit",
+
+        "Minimummembers": 1,
+        "Maximummembers": 3
+    },
+    {
+        "EventName": "Queer Trivia",
+        "Zone": "Quiz",
+        "Poster": "https://res.cloudinary.com/dvlxqrbjm/image/upload/v1705731632/ohgjnyalkzubsf7va6mb.png",
+        "miniDescription": "Written quiz",
+        "Description": "Participants will take part in teams of 1-3 people. The event will be a written quiz with questions projected on the screen. The trivia will cover queer culture across the globe.",
+        "Venue": "NLHC",
+        "Fees": 0,
+        "Contactdetails": [{ "name": "Anushka", "phone": "8374934030" }],
+        "Rules": ["Each team should consist of 3 members or less."],
+        "RuleBookLink": "https://docs.google.com/document/d/1PaD0hEfsQzRlCJH50fD5l8U41G5T0GF8-ApzwjRJmbE/edit",
+
+        "Minimummembers": 1,
+        "Maximummembers": 3
+    },
+    {
+        "EventName": "GPT Quiz",
+        "Zone": "Quiz",
+        "Poster": "https://res.cloudinary.com/dvlxqrbjm/image/upload/v1705732018/wnccjh9wmnfroip2x6b6.png",
+        "miniDescription": "In house quiz.",
+        "Description": "Teams of 3 or less, no electronics, only paper and pen, offline mode and even after all these restrictions, can you triumph over difficulties and win the Science, Business and Technology quiz hosted by our QuizClub members? Let your brains speak and propel you towards victory, this Srijan.",
+        "Venue": "Offline",
+        "Fees": 0,
+        "Contactdetails": [{ "name": "Avinash Verma", "phone": "8572845836" }, { "name": "Harsh Mishra", "phone": "6386697779" }],
+        "Rules": ["Each team should consist of 3 members or less.", "The quiz will be conducted offline in pen-paper mode.", "The quiz will consist of 2 rounds.", "Preliminary rounds will be written. Tie-breaker will be with sudden death.", "Top 8-10 teams will participate in the final.", "Teams can be formed by students from the same year and college.", "No electronic devices are allowed during the quiz."],
+        "RuleBookLink": "https://docs.google.com/document/d/1wfWiKqkSY-LA1u9Dt6rShNmeiOcyGZDq1TKr1oUMxk4/edit",
+
+        "Minimummembers": 1,
+        "Maximummembers": 3
+    },
+    {
+        "EventName": "Paridhaan",
+        "Zone": "Fashion",
+        "Poster": "",
+        "miniDescription": "Showcase of talent, creativity, and glamor.",
+        "Description": "Paridhan welcomes everyone to unleash their creativity, where imagination takes the spotlight. Teams are tasked to express themselves within a chosen theme, divulged to organisers pre event, with inspiring unique costumes and performances. In the grand finale 'Beauty & Geeks', we witness the intriguing contrast between glamour and intellect.Participants let their imaginations run wild and bring the captivating theme to life. ",
+        "Venue": "Offline",
+        "Fees": 0,
+        "Contactdetails": [],
+        "Rules": ["There will be one preliminary round and a final round.",
+            "Five teams will be selected for the final round.",
+            "Each team must occupy the stage for a minimum of 5 minutes and a maximum of 9 minutes, with a grace time of 1 minute.",
+            "Teams should consist of a minimum of 3 members and a maximum of 10 members.", "Teams must submit three background tracks on a CD one hour before their performance.",
+            "The organizers are not responsible if the track does not work in the system.",
+            "Background videos are also welcomed.",
+            "A makeup team will be provided upon request.",
+            "Teams will be penalized for not adhering to the given time limit.",
+            "The decision of the judges will be final."
+        ],
+        "RuleBookLink": "https://docs.google.com/document/d/1SEB2M2KTJK17QwRiTjiPxoEaMRIlz-5XNwIGzIZNfPw/edit",
+
+        "Minimummembers": 3,
+        "Maximummembers": 10
+    },
+    {
+        "EventName": "Campus Princess",
+        "Zone": "Fashion",
+        "Poster": "",
+        "miniDescription": "Showcase of talent, creativity, and glamor.",
+        "Description": "Step into the spotlight and let your charisma shine in our thrilling Personality Hunt Competition! Showcase your unique charm, wit, and talent as you engage in a series of exciting challenges that celebrate individuality and confidence.",
+        "Venue": "Offline",
+        "Fees": 0,
+        "Contactdetails": [],
+        "Rules": ["Nationality: Indian Passport Holder",
+            "Relationship Status: Unmarried",
+            "Dress Code: Preferably Black cocktail dress (mid length) and stilettos (minimum of 4 inch) for the ramp walk..",
+            "The contestant must agree to abide by all the rules and regulations set by the Organizers.",
+            "The applicant should be between 18 - 25 years of age as of December 31, 2023.",
+            "The applicant will be required to produce their age proof.",
+            "Bring your own jewellery, make-up etc.",
+            "The organizers are not responsible for any delays of the pageant.",
+            "Exceeding the time limit will cause deduction of 5 marks per 10 seconds.",
+            "Any incorrect information will result in disqualification whether discovered prior to, during, or after the finals."
+
         RuleBookLink:
           "https://docs.google.com/document/d/1qVgtpUZFsNC4W1tsHvSW-578uJb_DRj8-m-Hn3VRLwU/edit?usp=drive_link",
     
@@ -516,6 +655,7 @@ const EventData = [
         Contactdetails: [
           { name: "Riyal Patel", phone: "+91-7567180580" },
           { name: "Ritwik Singh", phone: "+91-6307039194" },
+
         ],
         Rules: [
           "This event will be a knockout tournament, where 2 teams of 4 will face each other at one time",

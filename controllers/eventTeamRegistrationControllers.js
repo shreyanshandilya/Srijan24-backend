@@ -96,7 +96,23 @@ const registerForEvent = async (req, res, next) => {
     status: "Thank u",
   });
 };
+
+const getEventRegistration = async(req,res,next)=>{
+  let registeredEvents;
+  try {
+    registeredEvents = await EventsData.find({});
+    if(!registeredEvents){
+      return next(new HttpError("error", 404));
+    }
+  } catch (error) {
+    return next(new HttpError("error", 404));
+  }
+
+  res.json(registeredEvents);
+}
+
 exports.registerForEvent = registerForEvent;
+exports.getEventRegistration = getEventRegistration;
 
 
 
