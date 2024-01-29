@@ -106,7 +106,8 @@ const ValidateOrderPayment = async (req, res, next) => {
 };
 
 
-const ValidateOfferOrderPayment = async (req, res, next) => {
+const ValidateOrderPaymentOffer = async (req, res, next) => {
+  console.log(req.body); 
 
   const { razorpay_order_id, razorpay_payment_id, razorpay_signature } =
     req.body;
@@ -145,11 +146,11 @@ const ValidateOfferOrderPayment = async (req, res, next) => {
   let tshirtSize4 = req.body.tshirtSize4;
   let hoodieSize1=req.body.hoodieSize1;
   let hoodieSize2 = req.body.hoodieSize2;
-  let address = req.body.addresss;
+  let address = req.body.address;
   let type = req.body.type;
 
  
-  if(type = "Hoodie"){
+  if(type = "Tshirt"){
     response.Merchandise.push({
       tshirtSize: tshirtSize1,
       address: address,
@@ -182,7 +183,7 @@ const ValidateOfferOrderPayment = async (req, res, next) => {
       paymentID: paymentID,
       type: type,
     });
-  }else if( type = "Tshirt"){
+  }else if( type === "Hoodie"){
     response.Merchandise.push({
       tshirtSize: hoodieSize1,
       address: address,
@@ -233,4 +234,4 @@ const GenerateSignature = async (req, res, next) => {
 exports.GenerateSignature = GenerateSignature;
 exports.MakeOrder = MakeOrder;
 exports.ValidateOrderPayment = ValidateOrderPayment;
-exports.ValidateOfferOrderPayment = ValidateOfferOrderPayment;
+exports.ValidateOfferOrderPayment = ValidateOrderPaymentOffer;
