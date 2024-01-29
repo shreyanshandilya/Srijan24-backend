@@ -67,6 +67,19 @@ const AccomodationPaymentAndPurchase = async (req, res, next) => {
     response.IsProNight = true;
     response.IsEvents = true;
   }
+  else if(Pacakage == "basic"){
+     response.IsEvents =true;
+     response.Merchandise.push({
+      tshirtSize: req.body.tshirtSize,
+      address: req.body.address,
+      quantity: 1,
+      orderID: razorpay_order_id,
+      paymentID: razorpay_payment_id,
+      type: "Tshirt",
+    });
+  }else if(Pacakage== "essential"){
+    response.IsEvents ==true;
+  }
   let Email = response.Email;
 
   try {
@@ -80,7 +93,12 @@ const AccomodationPaymentAndPurchase = async (req, res, next) => {
     );
   }
   console.log(response);
-  let manav= Pacakage === "bronze" ? false : true ;
+  let manav;
+ if( Pacakage == "bronze" || Pacakage=="basic" || Pacakage == "essential"){
+    manav = false;
+ }else{
+  manav = true;
+ }
   let createAccomodation = new Accomodation({
     Email: Email,
     Pacakage: Pacakage,
