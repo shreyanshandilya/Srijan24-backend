@@ -153,7 +153,7 @@ const ValidateOfferOrderPayment = async (req, res, next) => {
     response.Merchandise.push({
       tshirtSize: tshirtSize1,
       address: address,
-      quantity: quantity,
+      quantity: 1,
       orderID: orderID,
       paymentID: paymentID,
       type: type,
@@ -161,7 +161,7 @@ const ValidateOfferOrderPayment = async (req, res, next) => {
     response.Merchandise.push({
       tshirtSize: tshirtSize2,
       address: address,
-      quantity: quantity,
+      quantity: 1,
       orderID: orderID,
       paymentID: paymentID,
       type: type,
@@ -169,7 +169,7 @@ const ValidateOfferOrderPayment = async (req, res, next) => {
     response.Merchandise.push({
       tshirtSize: tshirtSize3,
       address: address,
-      quantity: quantity,
+      quantity: 1,
       orderID: orderID,
       paymentID: paymentID,
       type: type,
@@ -177,7 +177,7 @@ const ValidateOfferOrderPayment = async (req, res, next) => {
     response.Merchandise.push({
       tshirtSize: tshirtSize4,
       address: address,
-      quantity: quantity,
+      quantity: 1,
       orderID: orderID,
       paymentID: paymentID,
       type: type,
@@ -186,7 +186,7 @@ const ValidateOfferOrderPayment = async (req, res, next) => {
     response.Merchandise.push({
       tshirtSize: hoodieSize1,
       address: address,
-      quantity: quantity,
+      quantity: 1,
       orderID: orderID,
       paymentID: paymentID,
       type: type,
@@ -194,7 +194,7 @@ const ValidateOfferOrderPayment = async (req, res, next) => {
     response.Merchandise.push({
       tshirtSize: hoodieSize2,
       address: address,
-      quantity: quantity,
+      quantity: 1,
       orderID: orderID,
       paymentID: paymentID,
       type: type,
