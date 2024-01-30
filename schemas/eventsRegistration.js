@@ -58,6 +58,10 @@ const EventTeamListSchema = mongoose.Schema({
       Round1Preference:{
         type:String,
         default:null
+      },
+      ageProof:{
+        type:String,
+        default:null
       }
     },
   ],
